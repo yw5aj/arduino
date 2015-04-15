@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)https://sites.google.com/site/measuringstuff/the-arduino -->
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<script src="./The Arduino DAQ Chronicles - Measuring Stuff_files/cb=gapi.loaded_1" async=""></script><script src="./The Arduino DAQ Chronicles - Measuring Stuff_files/cb=gapi.loaded_0" async=""></script><script async="" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/analytics.js"></script><script type="text/javascript">/* Copyright 2008 Google. */ (function() { var b=window,e="chrome",g="tick",h="wtsrt_",l="tbsd_",m="tbnd_",n="start",p="_wtsrt",q="_tbnd",r="CSI/";(function(){function k(a){this.t={};this.tick=function(a,d,c){this.t[a]=[void 0!=c?c:(new Date).getTime(),d];if(void 0==c)try{b.console.timeStamp(r+a)}catch(f){}};this[g](n,null,a)}var a;b.performance&&(a=b.performance.timing);var t=a?new k(a.responseStart):new k;b.jstiming={Timer:k,load:t};if(a){var d=a.navigationStart,f=a.responseStart;0<d&&f>=d&&(b.jstiming.srt=f-d)}if(a){var c=b.jstiming.load;0<d&&f>=d&&(c[g](p,void 0,d),c[g](h,p,f),c[g](l,h))}try{a=null,b[e]&&b[e].csi&&(a=Math.floor(b[e].csi().pageT),
+c&&0<d&&(c[g](q,void 0,b[e].csi().startE),c[g](m,q,d))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,c&&0<d&&(c[g](q,void 0,b.external.startE),c[g](m,q,d))),a&&(b.jstiming.pt=a)}catch(u){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="https://www.google.com/images/icons/product/sites-16.ico">
+<link rel="apple-touch-icon" href="https://ssl.gstatic.com/sites/p/761d63/system/app/images/apple-touch-icon.png" type="image/png">
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { var d=window,e="length",h="",k="__duration__",l="function";function m(c){return document.getElementById(c)}d.byId=m;function n(c){return c.replace(/^\s+|\s+$/g,h)}d.trim=n;var p=[],q=0;d.JOT_addListener=function(c,a,b){var f=new String(q++);c={eventName:c,handler:a,compId:b,key:f};p.push(c);return f};d.JOT_removeListenerByKey=function(c){for(var a=0;a<p[e];a++)if(p[a].key==c){p.splice(a,1);break}};d.JOT_removeAllListenersForName=function(c){for(var a=0;a<p[e];a++)p[a].eventName==c&&p.splice(a,1)};
+d.JOT_postEvent=function(c,a,b){var f={eventName:c,eventSrc:a||{},payload:b||{}};if(d.JOT_fullyLoaded)for(a=p[e],b=0;b<a&&b<p[e];b++){var g=p[b];g&&g.eventName==c&&(f.listenerCompId=g.compId||h,(g=typeof g.handler==l?g.handler:d[g.handler])&&g(f))}else d.JOT_delayedEvents.push({eventName:c,eventSrc:a,payload:b})};d.JOT_delayedEvents=[];d.JOT_fullyLoaded=!1;
+d.JOT_formatRelativeToNow=function(c,a){var b=((new Date).getTime()-c)/6E4;if(1440<=b||0>b)return null;var f=0;60<=b&&(b/=60,f=2);2<=b&&f++;return a?d.JOT_siteRelTimeStrs[f].replace(k,Math.floor(b)):d.JOT_userRelTimeStrs[f].replace(k,Math.floor(b))}; })()
+</script>
+<script>
+  
+
+  var breadcrumbs = [{"path":"/site/measuringstuff/the-arduino","deleted":false,"title":"The Arduino DAQ Chronicles","dir":"ltr"}];
+  var JOT_clearDotPath = 'https://ssl.gstatic.com/sites/p/761d63/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"enableAnalytics":false,"pageSharingId":"jotspot_page","enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"Measuring Stuff","isStartPageEnabled":false,"adsensePublisherId":null,"features":{"languageSelectDefaultTextSetToDefault":true,"copySiteProgressUpdates":true,"newMyMapsOnepickLabel":false,"siteNoticeUrl":true,"moreMobileStyleImprovements":true,"asyncPermanentDelete":true,"newMyMapsEmbeds":true,"htmlEmbed":true,"asyncPageKeyFix":true,"driveImageLinkFromOnepick":true,"domainAnalyticsInGAOnly":true,"fileCabinetScreenReaderFix":true,"useGapiIframesForOnePick":true,"updatedTosAndPrivacyLinks":null,"betterErrorMessagingOnPageDeletion":true,"pageDrafts":false,"mobileOrientationFix":true,"plusBadge":false,"fileCabinetExpandCollapseSpaceBarFix":true,"pdfEmbedSupport":false,"jsClickFix":true},"isPublic":true,"isConsumer":true,"serverFlags":{"cajaBaseUrl":"//www.gstatic.com/caja","cajaDebugMode":false},"onepickBaseUrl":"https://docs.google.com","domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://www.google.com/a/SelectSession?continue\u003dhttps://sites.google.com/site/measuringstuff/the-arduino\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/761d63/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/761d63/system/js/codemirror.js","https://ssl.gstatic.com/sites/p/761d63/system/app/css/codemirror_css.css","https://ssl.gstatic.com/sites/p/761d63/system/js/trog_edit__en.js","https://ssl.gstatic.com/sites/p/761d63/system/app/css/trogedit.css","/site/measuringstuff/_/rsrc/1428919348000/system/app/css/editor.css","https://ssl.gstatic.com/sites/p/761d63/system/app/css/codeeditor.css","/site/measuringstuff/_/rsrc/1428919348000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/measuringstuff","name":"measuringstuff","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":null,"parentWuid":null,"siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"The Arduino DAQ Chronicles","locale":"en","wuid":"wuid:gx:69d1f217b6677023","revision":56,"path":"/the-arduino","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"the-arduino","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","dasherUser":false,"hasAdminAccess":false},"gadgets":{"baseUri":"/site/measuringstuff/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+
+var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="The Arduino DAQ Chronicles - Measuring Stuff">
+<meta itemprop="name" content="The Arduino DAQ Chronicles - Measuring Stuff">
+<meta property="og:title" content="The Arduino DAQ Chronicles - Measuring Stuff">
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="./The Arduino DAQ Chronicles - Measuring Stuff_files/standard-css-rounders-ltr-ltr.css">
+<link rel="stylesheet" type="text/css" href="./The Arduino DAQ Chronicles - Measuring Stuff_files/overlay.css">
+<link rel="stylesheet" type="text/css" href="./The Arduino DAQ Chronicles - Measuring Stuff_files/allthemes-view.css">
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/measuringstuff/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>The Arduino DAQ Chronicles - Measuring Stuff</title>
+<meta itemprop="image" content="https://sites.google.com/site/measuringstuff/_/rsrc/1269712098430/the-arduino/megasetup.JPG?height=200&amp;width=150">
+<meta property="og:image" content="https://sites.google.com/site/measuringstuff/_/rsrc/1269712098430/the-arduino/megasetup.JPG?height=200&amp;width=150">
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script><style type="text/css"></style>
+<script type="text/javascript" charset="UTF-8" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/js"></script><style>.dcs-r-dcs-ug-dcs-vg{position:relative;display:-moz-inline-box;display:inline-block}* html .dcs-r-dcs-ug-dcs-vg{display:inline}*:first-child+html .dcs-r-dcs-ug-dcs-vg{display:inline}.dcs-j-dcs-l{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;cursor:default;font-size:11px;font-weight:bold;text-align:center;white-space:nowrap;margin-right:16px;height:27px;line-height:27px;min-width:54px;outline:0px;padding:0 8px}.dcs-j-dcs-l-dcs-qh{-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);-moz-box-shadow:0 1px 1px rgba(0,0,0,.1);box-shadow:0 1px 1px rgba(0,0,0,.1)}.dcs-j-dcs-l-dcs-we{-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1)}.dcs-j-dcs-l .dcs-j-dcs-l-dcs-mf{margin-top:-3px;vertical-align:middle}.dcs-j-dcs-l-dcs-kg{margin-left:5px}.dcs-j-dcs-l-dcs-ad{min-width:34px;padding:0}.dcs-j-dcs-l-dcs-m-dcs-n,.dcs-j-dcs-l-dcs-m-dcs-jg{z-index:1}.dcs-j-dcs-l-dcs-m-dcs-n.dcs-j-dcs-l-dcs-ke{z-index:0}.dcs-j-dcs-l-dcs-gd.dcs-j-dcs-l-dcs-m-dcs-n,.dcs-j-dcs-l-dcs-gd.dcs-j-dcs-l-dcs-m-dcs-jg{z-index:2}.dcs-j-dcs-l-dcs-m-dcs-n:focus,.dcs-j-dcs-l-dcs-m-dcs-jg:focus,.dcs-j-dcs-l-dcs-qh.dcs-j-dcs-l-dcs-m-dcs-n,.dcs-j-dcs-l-dcs-qh.dcs-j-dcs-l-dcs-m-dcs-jg{z-index:3}.dcs-j-dcs-l-dcs-m-dcs-n{margin-left:-1px;-moz-border-radius-bottomleft:0;-moz-border-radius-topleft:0;-webkit-border-bottom-left-radius:0;-webkit-border-top-left-radius:0;border-bottom-left-radius:0;border-top-left-radius:0}.dcs-j-dcs-l-dcs-m-dcs-jg{margin-right:0px;-moz-border-radius-topright:0;-moz-border-radius-bottomright:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-right-radius:0;border-top-right-radius:0;border-bottom-right-radius:0}.dcs-j-dcs-l.dcs-j-dcs-l-dcs-ke:active{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.dcs-j-dcs-l-dcs-bc{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background-color:#4d90fe;background-image:-webkit-linear-gradient(top,#4d90fe,#4787ed);background-image:-moz-linear-gradient(top,#4d90fe,#4787ed);background-image:-ms-linear-gradient(top,#4d90fe,#4787ed);background-image:-o-linear-gradient(top,#4d90fe,#4787ed);background-image:linear-gradient(top,#4d90fe,#4787ed);border:1px solid #3079ed;color:#fff}.dcs-j-dcs-l-dcs-bc.dcs-j-dcs-l-dcs-qh{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background-color:#357ae8;background-image:-webkit-linear-gradient(top,#4d90fe,#357ae8);background-image:-moz-linear-gradient(top,#4d90fe,#357ae8);background-image:-ms-linear-gradient(top,#4d90fe,#357ae8);background-image:-o-linear-gradient(top,#4d90fe,#357ae8);background-image:linear-gradient(top,#4d90fe,#357ae8);border:1px solid #2f5bb7;border-bottom-color:#2f5bb7}.dcs-j-dcs-l-dcs-bc:focus{-webkit-box-shadow:inset 0 0 0 1px #fff;-moz-box-shadow:inset 0 0 0 1px #fff;box-shadow:inset 0 0 0 1px #fff;border:1px solid #fff;border:rgba(0,0,0,0) solid 1px;outline:1px solid #4d90fe;outline:rgba(0,0,0,0) 0}.dcs-j-dcs-l-dcs-bc.dcs-j-dcs-l-dcs-uf-dcs-vf{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;outline:none}.dcs-j-dcs-l-dcs-bc:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);background:#357ae8;border:1px solid #2f5bb7;border-top:1px solid #2f5bb7}.dcs-j-dcs-l-dcs-bc.dcs-j-dcs-l-dcs-ke{background:#4d90fe;filter:alpha(opacity=50);opacity:0.5}.dcs-j-dcs-l-dcs-me{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);color:#444;border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1)}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-qh,.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-uf-dcs-vf.dcs-j-dcs-l-dcs-qh{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #c6c6c6;color:#333}.dcs-j-dcs-l-dcs-me:active,.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-qh:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background:#f8f8f8;color:#333}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-we,.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-uf-dcs-vf.dcs-j-dcs-l-dcs-we{background-color:#eee;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #ccc;color:#333}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-gd,.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-uf-dcs-vf.dcs-j-dcs-l-dcs-gd{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#eee;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border:1px solid #ccc;color:#333}.dcs-j-dcs-l-dcs-me:focus{border:1px solid #4d90fe;outline:none}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-uf-dcs-vf{border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1);outline:none}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-ke{background:#fff;border:1px solid #f3f3f3;border:1px solid rgba(0,0,0,0.05);color:#b8b8b8}.dcs-j-dcs-l-dcs-me .dcs-j-dcs-l-dcs-mf{opacity:.55}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-gd .dcs-j-dcs-l-dcs-mf,.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-we .dcs-j-dcs-l-dcs-mf,.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-qh .dcs-j-dcs-l-dcs-mf{opacity:0.9}.dcs-j-dcs-l-dcs-me.dcs-j-dcs-l-dcs-ke .dcs-j-dcs-l-dcs-mf{filter:alpha(opacity=33);opacity:0.333}.dcs-r-dcs-zg,.dcs-vd-dcs-wd{-webkit-box-shadow:0 4px 16px rgba(0,0,0,.2);-moz-box-shadow:0 4px 16px rgba(0,0,0,.2);box-shadow:0 4px 16px rgba(0,0,0,.2);background:#fff;background-clip:padding-box;border:1px solid #acacac;border:1px solid rgba(0,0,0,.333);outline:0;position:absolute}.dcs-r-dcs-zg-dcs-ud,.dcs-vd-dcs-wd-dcs-ud{background:#fff;left:0;position:absolute;top:0}div.dcs-r-dcs-zg-dcs-ud,div.dcs-vd-dcs-wd-dcs-ud{filter:alpha(opacity=75);-moz-opacity:.75;opacity:.75}.dcs-vd-dcs-wd{color:#000;padding:30px 42px}.dcs-vd-dcs-wd-dcs-ye{background-color:#fff;color:#000;cursor:default;font-size:16px;font-weight:normal;line-height:24px;margin:0 0 16px}.dcs-vd-dcs-wd-dcs-ye-dcs-gg{height:11px;opacity:0.7;padding:17px;position:absolute;right:0px;top:0px;width:11px}.dcs-vd-dcs-wd-dcs-ye-dcs-gg:after{content:'';background:url(//ssl.gstatic.com/ui/v1/dialog/close-x.png);position:absolute;height:11px;width:11px;right:17px}.dcs-vd-dcs-wd-dcs-ye-dcs-gg:hover{opacity:1}.dcs-vd-dcs-wd-dcs-x{background-color:#fff;line-height:1.4em;word-wrap:break-word}.dcs-vd-dcs-wd-dcs-tc{margin-top:16px}.dcs-vd-dcs-wd-dcs-tc button{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1);color:#444;cursor:default;font-family:inherit;font-size:11px;font-weight:bold;height:29px;line-height:27px;margin:0 16px 0 0;min-width:72px;outline:0;padding:0 8px}.dcs-vd-dcs-wd-dcs-tc button:hover,.dcs-vd-dcs-wd-dcs-tc button:active{-webkit-box-shadow:0px 1px 1px rgba(0,0,0,0.1);-moz-box-shadow:0px 1px 1px rgba(0,0,0,0.1);box-shadow:0px 1px 1px rgba(0,0,0,0.1);background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #c6c6c6;color:#333}.dcs-vd-dcs-wd-dcs-tc button:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.dcs-vd-dcs-wd-dcs-tc button:focus{border:1px solid #4d90fe}.dcs-vd-dcs-wd-dcs-tc button[disabled]{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background:#fff;background-image:none;border:1px solid #f3f3f3;border:1px solid rgba(0,0,0,0.05);color:#b8b8b8}.dcs-vd-dcs-wd-dcs-tc .dcs-r-dcs-ve-dcs-bc{background-color:#4d90fe;background-image:-webkit-linear-gradient(top,#4d90fe,#4787ed);background-image:-moz-linear-gradient(top,#4d90fe,#4787ed);background-image:-ms-linear-gradient(top,#4d90fe,#4787ed);background-image:-o-linear-gradient(top,#4d90fe,#4787ed);background-image:linear-gradient(top,#4d90fe,#4787ed);border:1px solid #3079ed;color:#fff}.dcs-vd-dcs-wd-dcs-tc .dcs-r-dcs-ve-dcs-bc:hover,.dcs-vd-dcs-wd-dcs-tc .dcs-r-dcs-ve-dcs-bc:active{background-color:#357ae8;background-image:-webkit-linear-gradient(top,#4d90fe,#357ae8);background-image:-moz-linear-gradient(top,#4d90fe,#357ae8);background-image:-ms-linear-gradient(top,#4d90fe,#357ae8);background-image:-o-linear-gradient(top,#4d90fe,#357ae8);background-image:linear-gradient(top,#4d90fe,#357ae8);border:1px solid #2f5bb7;color:#fff}.dcs-vd-dcs-wd-dcs-tc .dcs-r-dcs-ve-dcs-bc:active{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3);box-shadow:inset 0 1px 2px rgba(0,0,0,0.3)}.dcs-vd-dcs-wd-dcs-tc .dcs-r-dcs-ve-dcs-bc:focus{-webkit-box-shadow:inset 0 0 0 1px #fff;-moz-box-shadow:inset 0 0 0 1px #fff;box-shadow:inset 0 0 0 1px #fff;border:1px solid #fff;border:rgba(0,0,0,0) solid 1px;outline:1px solid #4d90fe;outline:rgba(0,0,0,0) 0}.dcs-vd-dcs-wd-dcs-tc .dcs-r-dcs-ve-dcs-bc[disabled]{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;background:#4d90fe;color:#fff;filter:alpha(opacity=50);opacity:0.5}.dcs-j-dcs-sg,.dcs-j-dcs-qd,.dcs-j-dcs-k{width:512px}.dcs-r-dcs-lf{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-transition:opacity 0.218s;-moz-transition:opacity 0.218s;-o-transition:opacity 0.218s;transition:opacity 0.218s;background:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);cursor:default;font-size:13px;margin:0;outline:none;padding:6px 0;position:absolute}.dcs-r-dcs-je-dcs-lf-dcs-l{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background-color:#f5f5f5;background-image:-webkit-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-moz-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-ms-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:-o-linear-gradient(top,#f5f5f5,#f1f1f1);background-image:linear-gradient(top,#f5f5f5,#f1f1f1);border:1px solid #dcdcdc;color:#444;cursor:default;font-size:11px;font-weight:bold;line-height:27px;list-style:none;margin:0 2px;min-width:46px;outline:none;padding:0 18px 0 6px;text-align:center;text-decoration:none}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ke{background-color:#fff;border-color:#f3f3f3;color:#b8b8b8}.dcs-r-dcs-je-dcs-lf-dcs-l.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1);-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);-moz-box-shadow:0 1px 1px rgba(0,0,0,.1);box-shadow:0 1px 1px rgba(0,0,0,.1);border-color:#c6c6c6;color:#333}.dcs-r-dcs-je-dcs-lf-dcs-l.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-xg{border-color:#4d90fe}.dcs-r-dcs-je-dcs-lf-dcs-l.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pf,.dcs-r-dcs-je-dcs-lf-dcs-l.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ge{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#eee;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border:1px solid #ccc;color:#333;z-index:2}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-lc{vertical-align:top;white-space:nowrap}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe{border-color:#777 transparent;border-style:solid;border-width:4px 4px 0 4px;height:0;width:0;position:absolute;right:5px;top:12px}.dcs-r-dcs-je-dcs-lf-dcs-l .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-mf{margin-top:-3px;opacity:.55;vertical-align:middle}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ge .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-mf,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pf .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-mf,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-we .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-mf,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-mf{opacity:0.9}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ge .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pf .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-we .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe{border-color:#595959 transparent}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-n,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-jg{z-index:1}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-n.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ke{z-index:0}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-jg:focus,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-m-dcs-jg{z-index:2}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-n:focus,.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-m-dcs-n{z-index:2}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-m-dcs-n{margin-left:-1px;-moz-border-radius-bottomleft:0;-moz-border-radius-topleft:0;-webkit-border-bottom-left-radius:0;-webkit-border-top-left-radius:0;border-bottom-left-radius:0;border-top-left-radius:0;min-width:0;padding-left:0;vertical-align:top}.dcs-r-dcs-je-dcs-lf-dcs-l-dcs-m-dcs-jg{margin-right:0px;-moz-border-radius-topright:0;-moz-border-radius-bottomright:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-right-radius:0;border-top-right-radius:0;border-bottom-right-radius:0}.dcs-r-dcs-s,.dcs-r-dcs-uh,.dcs-r-dcs-vh{position:relative;color:#333;cursor:pointer;list-style:none;margin:0;padding:6px 8em 6px 30px;white-space:nowrap}.dcs-r-dcs-lf-dcs-wh .dcs-r-dcs-s,.dcs-r-dcs-lf-dcs-xh .dcs-r-dcs-s{padding-left:16px;vertical-align:middle}.dcs-r-dcs-lf-dcs-yh .dcs-r-dcs-s{padding-right:44px}.dcs-r-dcs-s-dcs-ke{cursor:default}.dcs-r-dcs-s-dcs-ke .dcs-r-dcs-s-dcs-oc,.dcs-r-dcs-s-dcs-ke .dcs-r-dcs-s-dcs-x{color:#ccc!important}.dcs-r-dcs-s-dcs-ke .dcs-r-dcs-s-dcs-xc{filter:alpha(opacity=30);opacity:0.3}.dcs-r-dcs-s-dcs-nf,.dcs-r-dcs-s-dcs-qh{background-color:#eee;border-color:#eee;border-style:dotted;border-width:1px 0;padding-top:5px;padding-bottom:5px}.dcs-r-dcs-s-dcs-nf .dcs-r-dcs-s-dcs-x,.dcs-r-dcs-s-dcs-qh .dcs-r-dcs-s-dcs-x{color:#333}.dcs-r-dcs-s-dcs-ef,.dcs-r-dcs-s-dcs-xc{background-repeat:no-repeat;height:21px;left:3px;position:absolute;right:auto;top:3px;vertical-align:middle;width:21px}.dcs-r-dcs-oe-dcs-we{background-image:url(//ssl.gstatic.com/ui/v1/menu/checkmark.png);background-repeat:no-repeat;background-position:left center}.dcs-r-dcs-oe-dcs-we .dcs-r-dcs-s-dcs-x{color:#333}.dcs-r-dcs-s-dcs-oc{color:#777;direction:ltr;left:auto;padding:0 6px;position:absolute;right:0;text-align:right}.dcs-r-dcs-s-dcs-xd-dcs-zh{text-decoration:underline}.dcs-r-dcs-s-dcs-xd-dcs-yd{color:#777;font-size:12px;padding-left:4px}.dcs-r-dcs-kf-dcs-l,.dcs-r-dcs-kf-dcs-lf-dcs-l{-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;background:0;border-color:transparent;border-style:solid;border-width:1px;outline:none;padding:0;height:24px;color:#444;line-height:24px;list-style:none;font-size:11px;font-weight:bold;text-decoration:none;vertical-align:middle;cursor:default}.dcs-r-dcs-kf-dcs-l-dcs-rb-dcs-y,.dcs-r-dcs-kf-dcs-l-dcs-u-dcs-y .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-rb-dcs-y,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-u-dcs-y{border:0;vertical-align:top}.dcs-r-dcs-kf-dcs-l-dcs-rb-dcs-y,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-rb-dcs-y{margin:0;padding:0}.dcs-r-dcs-kf-dcs-l-dcs-u-dcs-y,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-u-dcs-y{padding:0 2px}.dcs-r-dcs-kf-dcs-l-dcs-qh,.dcs-r-dcs-kf-dcs-l-dcs-ge,.dcs-r-dcs-kf-dcs-l-dcs-gd,.dcs-r-dcs-kf-dcs-l-dcs-we{color:#222;padding:0}.dcs-r-dcs-kf-dcs-l-dcs-qh,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-qh{border-color:#c6c6c6!important;color:#222}.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-pf{color:#222}.dcs-r-dcs-kf-dcs-l-dcs-qh,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-qh{-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);-moz-box-shadow:0 1px 1px rgba(0,0,0,.1);box-shadow:0 1px 1px rgba(0,0,0,.1);background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1)}.dcs-r-dcs-kf-dcs-l-dcs-ge,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-ge{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#f6f6f6;background-image:-webkit-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:-moz-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:-ms-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:-o-linear-gradient(top,#f6f6f6,#f1f1f1);background-image:linear-gradient(top,#f6f6f6,#f1f1f1);border-color:#c6c6c6}.dcs-r-dcs-kf-dcs-l-dcs-we,.dcs-r-dcs-kf-dcs-l-dcs-gd,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-pf{-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);background-color:#eee;background-image:-webkit-linear-gradient(top,#eee,#e0e0e0);background-image:-moz-linear-gradient(top,#eee,#e0e0e0);background-image:-ms-linear-gradient(top,#eee,#e0e0e0);background-image:-o-linear-gradient(top,#eee,#e0e0e0);background-image:linear-gradient(top,#eee,#e0e0e0);border-color:#ccc}.dcs-r-dcs-kf-dcs-l-dcs-ke,.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-ke{color:#222!important;opacity:0.3;filter:alpha(opacity=30)}.dcs-r-dcs-kf-dcs-l-dcs-m-dcs-jg,.dcs-r-dcs-kf-dcs-l-dcs-m-dcs-jg .dcs-r-dcs-kf-dcs-l-dcs-rb-dcs-y,.dcs-r-dcs-kf-dcs-l-dcs-m-dcs-jg .dcs-r-dcs-kf-dcs-l-dcs-u-dcs-y{margin-right:0}.dcs-r-dcs-kf-dcs-l-dcs-m-dcs-n,.dcs-r-dcs-kf-dcs-l-dcs-m-dcs-n .dcs-r-dcs-kf-dcs-l-dcs-rb-dcs-y,.dcs-r-dcs-kf-dcs-l-dcs-m-dcs-n .dcs-r-dcs-kf-dcs-l-dcs-u-dcs-y{margin-left:0}.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-pe{background:url(//ssl.gstatic.com/ui/v1/disclosure/small-grey-disclosure-arrow-down.png) center no-repeat;float:right;margin:10px 2px 0 3px;padding:0;opacity:.8;vertical-align:middle;width:5px;height:7px;*float:none;*position:relative;*top:-3px}.dcs-r-dcs-kf-dcs-yd{border-left:1px solid #ccc;height:17px;line-height:normal;list-style:none;margin:0 2px;outline:none;overflow:hidden;padding:0;text-decoration:none;vertical-align:middle;width:0}.dcs-r-dcs-kf-dcs-ai .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-pe{background:url(//ssl.gstatic.com/ui/v1/disclosure/small-grey-disclosure-arrow-down.png) center no-repeat;height:11px;margin-top:7px;width:7px;-webkit-transform:none;-moz-transform:none;transform:none;filter:none}.dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-lc{padding:0;margin:0}.dcs-j-dcs-ch::-webkit-scrollbar{height:16px;overflow:visible;width:16px}.dcs-j-dcs-ch::-webkit-scrollbar-button{height:0;width:0}.dcs-j-dcs-ch::-webkit-scrollbar-track{background-clip:padding-box;border:solid transparent;border-width:0 0 0 4px}.dcs-j-dcs-ch::-webkit-scrollbar-track:horizontal{border-width:4px 0 0}.dcs-j-dcs-ch::-webkit-scrollbar-track:hover{background-color:rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(0,0,0,.1)}.dcs-j-dcs-ch::-webkit-scrollbar-track:horizontal:hover{box-shadow:inset 0 1px 0 rgba(0,0,0,.1)}.dcs-j-dcs-ch::-webkit-scrollbar-track:active{background-color:rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(0,0,0,.14),inset -1px 0 0 rgba(0,0,0,.07)}.dcs-j-dcs-ch::-webkit-scrollbar-track:horizontal:active{box-shadow:inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-track:hover{background-color:rgba(255,255,255,.1);box-shadow:inset 1px 0 0 rgba(255,255,255,.2)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-track:horizontal:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-track:active{background-color:rgba(255,255,255,.1);box-shadow:inset 1px 0 0 rgba(255,255,255,.25),inset -1px 0 0 rgba(255,255,255,.15)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-track:horizontal:active{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),inset 0 -1px 0 rgba(255,255,255,.15)}.dcs-j-dcs-ch::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,.2);background-clip:padding-box;border:solid transparent;border-width:1px 1px 1px 6px;min-height:28px;padding:100px 0 0;box-shadow:inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07)}.dcs-j-dcs-ch::-webkit-scrollbar-thumb:horizontal{border-width:6px 1px 1px;padding:0 0 0 100px;box-shadow:inset 1px 1px 0 rgba(0,0,0,.1),inset -1px 0 0 rgba(0,0,0,.07)}.dcs-j-dcs-ch::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.4);box-shadow:inset 1px 1px 1px rgba(0,0,0,.25)}.dcs-j-dcs-ch::-webkit-scrollbar-thumb:active{background-color:rgba(0,0,0,0.5);box-shadow:inset 1px 1px 3px rgba(0,0,0,0.35)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-thumb{background-color:rgba(255,255,255,.3);box-shadow:inset 1px 1px 0 rgba(255,255,255,.15),inset 0 -1px 0 rgba(255,255,255,.1)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-thumb:horizontal{box-shadow:inset 1px 1px 0 rgba(255,255,255,.15),inset -1px 0 0 rgba(255,255,255,.1)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-thumb:hover{background-color:rgba(255,255,255,.6);box-shadow:inset 1px 1px 1px rgba(255,255,255,.37)}.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-thumb:active{background-color:rgba(255,255,255,.75);box-shadow:inset 1px 1px 3px rgba(255,255,255,.5)}.dcs-j-dcs-ch-dcs-ci.dcs-j-dcs-ch::-webkit-scrollbar-track{border-width:0 1px 0 6px}.dcs-j-dcs-ch-dcs-ci.dcs-j-dcs-ch::-webkit-scrollbar-track:horizontal{border-width:6px 0 1px}.dcs-j-dcs-ch-dcs-ci.dcs-j-dcs-ch::-webkit-scrollbar-track:hover{background-color:rgba(0,0,0,.035);box-shadow:inset 1px 1px 0 rgba(0,0,0,.14),inset -1px -1px 0 rgba(0,0,0,.07)}.dcs-j-dcs-ch-dcs-ci.dcs-j-dcs-ch-dcs-bi.dcs-j-dcs-ch::-webkit-scrollbar-track:hover{background-color:rgba(255,255,255,.07);box-shadow:inset 1px 1px 0 rgba(255,255,255,.25),inset -1px -1px 0 rgba(255,255,255,.15)}.dcs-j-dcs-ch-dcs-ci.dcs-j-dcs-ch::-webkit-scrollbar-thumb{border-width:0 1px 0 6px}.dcs-j-dcs-ch-dcs-ci.dcs-j-dcs-ch::-webkit-scrollbar-thumb:horizontal{border-width:6px 0 1px}.dcs-j-dcs-ch::-webkit-scrollbar-corner{background:transparent}body.dcs-j-dcs-ch::-webkit-scrollbar-track-piece{background-clip:padding-box;background-color:#f5f5f5;border:solid #fff;border-width:0 0 0 3px;box-shadow:inset 1px 0 0 rgba(0,0,0,.14),inset -1px 0 0 rgba(0,0,0,.07)}body.dcs-j-dcs-ch::-webkit-scrollbar-track-piece:horizontal{border-width:3px 0 0;box-shadow:inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07)}body.dcs-j-dcs-ch::-webkit-scrollbar-thumb{border-width:1px 1px 1px 5px}body.dcs-j-dcs-ch::-webkit-scrollbar-thumb:horizontal{border-width:5px 1px 1px}body.dcs-j-dcs-ch::-webkit-scrollbar-corner{background-clip:padding-box;background-color:#f5f5f5;border:solid #fff;border-width:3px 0 0 3px;box-shadow:inset 1px 1px 0 rgba(0,0,0,.14)}.dcs-j-dcs-di{-webkit-box-shadow:0 1px 3px rgba(0,0,0,.2);-moz-box-shadow:0 1px 3px rgba(0,0,0,.2);box-shadow:0 1px 3px rgba(0,0,0,.2);background-color:#fff;border:1px solid;border-color:#bbb #bbb #a8a8a8;padding:16px;position:absolute;z-index:1201!important}.dcs-j-dcs-di-dcs-ei{background:url("//ssl.gstatic.com/ui/v1/icons/common/x_8px.png") no-repeat;border:1px solid transparent;height:21px;opacity:.4;outline:0;position:absolute;right:2px;top:2px;width:21px}.dcs-j-dcs-di-dcs-ei:focus{border:1px solid #4d90fe;opacity:.8}.dcs-j-dcs-di-dcs-g{position:absolute}.dcs-j-dcs-di-dcs-g .dcs-j-dcs-di-dcs-ub,.dcs-j-dcs-di-dcs-g .dcs-j-dcs-di-dcs-z{display:block;height:0;position:absolute;width:0}.dcs-j-dcs-di-dcs-g .dcs-j-dcs-di-dcs-ub{border:9px solid}.dcs-j-dcs-di-dcs-g .dcs-j-dcs-di-dcs-z{border:8px solid}.dcs-j-dcs-di-dcs-hd{bottom:0}.dcs-j-dcs-di-dcs-ah{top:-9px}.dcs-j-dcs-di-dcs-jc{left:-9px}.dcs-j-dcs-di-dcs-df{right:0}.dcs-j-dcs-di-dcs-hd .dcs-j-dcs-di-dcs-ub,.dcs-j-dcs-di-dcs-ah .dcs-j-dcs-di-dcs-ub{border-color:#bbb transparent;left:-9px}.dcs-j-dcs-di-dcs-hd .dcs-j-dcs-di-dcs-ub{border-color:#a8a8a8 transparent}.dcs-j-dcs-di-dcs-hd .dcs-j-dcs-di-dcs-z,.dcs-j-dcs-di-dcs-ah .dcs-j-dcs-di-dcs-z{border-color:#fff transparent;left:-8px}.dcs-j-dcs-di-dcs-hd .dcs-j-dcs-di-dcs-ub{border-bottom-width:0}.dcs-j-dcs-di-dcs-hd .dcs-j-dcs-di-dcs-z{border-bottom-width:0}.dcs-j-dcs-di-dcs-ah .dcs-j-dcs-di-dcs-ub{border-top-width:0}.dcs-j-dcs-di-dcs-ah .dcs-j-dcs-di-dcs-z{border-top-width:0;top:1px}.dcs-j-dcs-di-dcs-jc .dcs-j-dcs-di-dcs-ub,.dcs-j-dcs-di-dcs-df .dcs-j-dcs-di-dcs-ub{border-color:transparent #bbb;top:-9px}.dcs-j-dcs-di-dcs-jc .dcs-j-dcs-di-dcs-z,.dcs-j-dcs-di-dcs-df .dcs-j-dcs-di-dcs-z{border-color:transparent #fff;top:-8px}.dcs-j-dcs-di-dcs-jc .dcs-j-dcs-di-dcs-ub{border-left-width:0}.dcs-j-dcs-di-dcs-jc .dcs-j-dcs-di-dcs-z{border-left-width:0;left:1px}.dcs-j-dcs-di-dcs-df .dcs-j-dcs-di-dcs-ub{border-right-width:0}.dcs-j-dcs-di-dcs-df .dcs-j-dcs-di-dcs-z{border-right-width:0}.dcs-j-dcs-te{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;-webkit-transition:visibility 0,opacity .13s ease-in;-moz-transition:visibility 0,opacity .13s ease-in;-o-transition:visibility 0,opacity .13s ease-in;transition:visibility 0,opacity .13s ease-in;background-color:#2a2a2a;border:1px solid #fff;color:#fff;cursor:default;display:block;font-size:11px;font-weight:bold;margin-left:-1px;opacity:1;padding:7px 9px;position:absolute;visibility:visible;word-break:break-all;word-break:break-word}.dcs-j-dcs-te-dcs-ue{-webkit-transition:visibility .13s,opacity .13s ease-out,left 0 linear .13s,top 0 linear .13s;-moz-transition:visibility .13s,opacity .13s ease-out,left 0 linear .13s,top 0 linear .13s;-o-transition:visibility .13s,opacity .13s ease-out,left 0 linear .13s,top 0 linear .13s;transition:visibility .13s,opacity .13s ease-out,left 0 linear .13s,top 0 linear .13s;opacity:0;left:20px!important;top:20px!important;visibility:hidden}.dcs-j-dcs-te-dcs-tg{display:none}.dcs-j-dcs-te-dcs-g{pointer-events:none;position:absolute}.dcs-j-dcs-te-dcs-g .dcs-j-dcs-te-dcs-ub,.dcs-j-dcs-te-dcs-g .dcs-j-dcs-te-dcs-z{content:'';display:block;height:0;position:absolute;width:0}.dcs-j-dcs-te-dcs-g .dcs-j-dcs-te-dcs-ub{border:6px solid}.dcs-j-dcs-te-dcs-g .dcs-j-dcs-te-dcs-z{border:5px solid}.dcs-j-dcs-te-dcs-hd{bottom:0}.dcs-j-dcs-te-dcs-ah{top:-6px}.dcs-j-dcs-te-dcs-jc{left:-6px}.dcs-j-dcs-te-dcs-df{right:0}.dcs-j-dcs-te-dcs-hd .dcs-j-dcs-te-dcs-ub,.dcs-j-dcs-te-dcs-ah .dcs-j-dcs-te-dcs-ub{border-color:#fff transparent;left:-6px}.dcs-j-dcs-te-dcs-hd .dcs-j-dcs-te-dcs-z,.dcs-j-dcs-te-dcs-ah .dcs-j-dcs-te-dcs-z{border-color:#2a2a2a transparent;left:-5px}.dcs-j-dcs-te-dcs-hd .dcs-j-dcs-te-dcs-ub{border-bottom-width:0}.dcs-j-dcs-te-dcs-hd .dcs-j-dcs-te-dcs-z{border-bottom-width:0}.dcs-j-dcs-te-dcs-ah .dcs-j-dcs-te-dcs-ub{border-top-width:0}.dcs-j-dcs-te-dcs-ah .dcs-j-dcs-te-dcs-z{border-top-width:0;top:1px}.dcs-j-dcs-te-dcs-jc .dcs-j-dcs-te-dcs-ub,.dcs-j-dcs-te-dcs-df .dcs-j-dcs-te-dcs-ub{border-color:transparent #fff;top:-6px}.dcs-j-dcs-te-dcs-jc .dcs-j-dcs-te-dcs-z,.dcs-j-dcs-te-dcs-df .dcs-j-dcs-te-dcs-z{border-color:transparent #2a2a2a;top:-5px}.dcs-j-dcs-te-dcs-jc .dcs-j-dcs-te-dcs-ub{border-left-width:0}.dcs-j-dcs-te-dcs-jc .dcs-j-dcs-te-dcs-z{border-left-width:0;left:1px}.dcs-j-dcs-te-dcs-df .dcs-j-dcs-te-dcs-ub{border-right-width:0}.dcs-j-dcs-te-dcs-df .dcs-j-dcs-te-dcs-z{border-right-width:0}.dcs-vd-dcs-wd{z-index:1001}.dcs-vd-dcs-wd-dcs-ud{z-index:1000}.dcs-vd-dcs-wd-dcs-ye-dcs-gg{background-image:none}.dcs-r-dcs-lf{z-index:1001}.dcs-a-dcs-af-dcs-rb{width:11px;height:11px}.dcs-a-dcs-af-dcs-rb>.dcs-a-dcs-vc-dcs-pe{width:11px;height:11px;margin:auto;vertical-align:top;cursor:pointer}.dcs-a-dcs-af-dcs-rb .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-pe{width:11px;height:11px;margin:0;padding:0}.dcs-a-dcs-af-dcs-rb .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-u-dcs-y,.dcs-a-dcs-af-dcs-rb .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-rb-dcs-y{width:11px;min-width:11px;height:11px;min-height:11px}.dcs-a-dcs-af>.dcs-r-dcs-s{padding-left:10px;padding-right:10px}.dcs-a-dcs-d{background-color:#f5f5f5;cursor:pointer;direction:ltr;position:relative;width:240px;border:none;box-shadow:0 1px 3px rgba(0,0,0,0.3);border-radius:2px}.dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-d{cursor:default}.dcs-a-dcs-d:focus,.dcs-a-dcs-d:active{outline:0}.dcs-a-dcs-d-dcs-g-dcs-u,.dcs-a-dcs-d-dcs-g-dcs-rb{display:none}.dcs-a-dcs-d-dcs-bh{max-height:inherit;overflow-y:auto;overflow-x:hidden}.dcs-a-dcs-d-dcs-x{overflow-y:auto;overflow-x:hidden}.dcs-a-dcs-d .dcs-a-dcs-d-dcs-e-dcs-f{border:none;display:none;padding:8px}.dcs-a-dcs-d .dcs-a-dcs-ag-dcs-e-dcs-f{background:#fff}.dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-d .dcs-a-dcs-d-dcs-e-dcs-f{display:block}.dcs-a-dcs-d-dcs-e-dcs-f .dcs-a-dcs-e-dcs-ee{display:block;height:26px}.dcs-a-dcs-d-dcs-e-dcs-f .dcs-a-dcs-e-dcs-tc{text-align:left}.dcs-a-dcs-ag-dcs-e-dcs-f{border-top:none!important;padding-top:0}.dcs-a-dcs-d .dcs-a-dcs-e-dcs-vb-dcs-wb-dcs-kb,.dcs-a-dcs-d .dcs-a-dcs-e-dcs-ib-dcs-jb-dcs-kb{color:#999;font-size:11px}.dcs-a-dcs-d .dcs-a-dcs-d-dcs-qb{border-top:1px solid #feef9c;bottom:0;left:0;padding-top:6px;position:relative;width:100%}.dcs-a-dcs-d .dcs-a-dcs-qb-dcs-tb{font-weight:bold;margin-right:6px;padding:2px 0}.dcs-a-dcs-b-dcs-mh .dcs-a-dcs-d{position:absolute;-moz-user-select:text;z-index:500}.dcs-a-dcs-b-dcs-mh .dcs-a-dcs-vc-dcs-tf.dcs-a-dcs-d,.dcs-a-dcs-b-dcs-mh .dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-d{z-index:501}.dcs-a-dcs-b-dcs-mh-dcs-ph .dcs-a-dcs-d{box-shadow:0 2px 4px rgba(0,0,0,0.2)}.dcs-a-dcs-b-dcs-c .dcs-a-dcs-d-dcs-g-dcs-u,.dcs-a-dcs-d-dcs-g-dcs-rb{height:0;position:absolute;width:0}.dcs-a-dcs-b-dcs-c .dcs-a-dcs-d .dcs-a-dcs-d-dcs-g-dcs-u{border-top:none;border-bottom:18px solid transparent;border-left:none;border-right:18px solid #fff;left:-13px;top:0}.dcs-a-dcs-b-dcs-c .dcs-a-dcs-d .dcs-a-dcs-d-dcs-g-dcs-rb{border-top:none;border-bottom:24px solid transparent;border-left:none;border-right:24px solid #ddd;left:-15px;top:-1px;z-index:-1}.dcs-a-dcs-b-dcs-c .dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-d>.dcs-a-dcs-d-dcs-g-dcs-u,.dcs-a-dcs-b-dcs-c .dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-d>.dcs-a-dcs-d-dcs-g-dcs-rb{display:block}.dcs-a-dcs-d .dcs-a-dcs-e-dcs-wf{margin-right:10px}.dcs-a-dcs-fb,.dcs-a-dcs-dc{border:none;border-bottom:1px solid #e5e5e5;padding:3px 8px 5px 8px;zoom:1;background:#f5f5f5}.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge{box-shadow:0px 3px 6px rgba(0,0,0,0.2)}.dcs-a-dcs-d .dcs-a-dcs-fb:last-of-type{padding-bottom:12px}.dcs-a-dcs-d .dcs-a-dcs-ob-dcs-bg.dcs-a-dcs-fb{padding:8px;border-bottom:1px solid #ddd;background:#fff;min-height:36px}.dcs-a-dcs-d .dcs-a-dcs-d-dcs-qg .dcs-a-dcs-ob-dcs-bg.dcs-a-dcs-fb{border:none}.dcs-a-dcs-fb .dcs-a-dcs-fb-dcs-o{left:0!important;display:block}.dcs-a-dcs-fb.dcs-a-dcs-ob-dcs-bg{border-top:none!important}.dcs-a-dcs-fb-dcs-tb .dcs-a-dcs-fb-dcs-hc{margin:0;margin-top:2px;color:#333;font-size:13px;font-weight:normal;height:18px}.dcs-a-dcs-d .dcs-a-dcs-d-dcs-e-dcs-f .dcs-a-dcs-e-dcs-ee,.dcs-a-dcs-fb .dcs-a-dcs-fb-dcs-gb .dcs-a-dcs-fb-dcs-qe{line-height:1.4}.dcs-a-dcs-fb .dcs-a-dcs-fb-dcs-gb{word-wrap:break-word;color:#333;padding:0}.dcs-a-dcs-fb-dcs-tb .dcs-a-dcs-fb-dcs-fe{margin:0;color:#777;font-size:11px}.dcs-a-dcs-fb .dcs-a-dcs-xb-dcs-yb,.dcs-a-dcs-fb .dcs-a-dcs-ff-dcs-yb{height:28px;margin:0;opacity:0.2;padding:0;position:relative;min-width:28px;width:28px;top:auto;right:auto;display:table-cell;vertical-align:middle}.dcs-a-dcs-fb .dcs-a-dcs-xb-dcs-yb{right:-1px}.dcs-a-dcs-fb .dcs-a-dcs-xb-dcs-yb div,.dcs-a-dcs-fb .dcs-a-dcs-ff-dcs-yb div{margin:auto;margin-top:1px}.dcs-a-dcs-xb-dcs-yb{border-radius:3px 0 0 3px}.dcs-a-dcs-ff-dcs-yb{border-radius:0 3px 3px 0}.dcs-a-dcs-xb-dcs-yb.dcs-j-dcs-l-dcs-ke,.dcs-a-dcs-ff-dcs-yb.dcs-j-dcs-l-dcs-ke{background-color:#f9f9f9}.dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-d .dcs-a-dcs-ob-dcs-ac,.dcs-a-dcs-cc-dcs-ge.dcs-a-dcs-dc .dcs-a-dcs-ob-dcs-ac{display:block}.dcs-a-dcs-dc-dcs-ec{word-wrap:break-word;color:#15c}.dcs-a-dcs-dc-dcs-ec:hover,.dcs-a-dcs-d:hover .dcs-a-dcs-dc-dcs-ec{text-decoration:underline}.dcs-a-dcs-gc-dcs-ob{position:relative;margin:6px 0;padding:0}.dcs-a-dcs-gc-dcs-ob.dcs-a-dcs-gc-dcs-ob-dcs-fi{margin:0}.dcs-a-dcs-fb .dcs-a-dcs-ec-dcs-ob{height:78px;overflow:hidden}.dcs-a-dcs-lb-dcs-jf,.dcs-a-dcs-lb-dcs-nh{color:#15c;display:none;opacity:1;width:100%;outline:none}.dcs-a-dcs-lb-dcs-jf:focus,.dcs-a-dcs-lb-dcs-nh:focus{text-decoration:underline}.dcs-a-dcs-lb-dcs-jf{bottom:0;padding-top:16px;position:absolute;right:0}.dcs-a-dcs-d .dcs-a-dcs-lb-dcs-nh,.dcs-a-dcs-d .dcs-a-dcs-lb-dcs-jf{cursor:pointer;font-size:11px}.dcs-a-dcs-d .dcs-a-dcs-lb-dcs-nh{background:#f5f5f5;padding:2px 0}.dcs-a-dcs-d .dcs-a-dcs-lb-dcs-jf{padding:7px 0 2px 0}.dcs-a-dcs-d .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-lb-dcs-nh{background:#fff}.dcs-a-dcs-lb-dcs-jf:hover,.dcs-a-dcs-lb-dcs-nh:hover{text-decoration:underline}.dcs-a-dcs-d .dcs-a-dcs-lb-dcs-jf{background:#f5f5f5;-ms-filter:none;filter:none}.dcs-a-dcs-d .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-lb-dcs-jf{background:#fff}.dcs-a-dcs-d.dcs-a-dcs-cc:hover .dcs-a-dcs-lb-dcs-jf{background:#f5f5f5;-ms-filter:none;filter:none}.dcs-a-dcs-d.dcs-a-dcs-cc:hover .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-lb-dcs-jf{background:#fff}.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-lb-dcs-jf,.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge:hover .dcs-a-dcs-lb-dcs-jf{background:#f5f5f5;-ms-filter:none;filter:none}.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-lb-dcs-jf,.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge:hover .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-lb-dcs-jf{background:#fff}.dcs-a-dcs-ec-dcs-ob>.dcs-a-dcs-lb-dcs-jf{display:block}.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-lb-dcs-nh{background:#f5f5f5}.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-lb-dcs-nh{background:#fff}.dcs-a-dcs-fb-dcs-tb{margin:6px 0;height:38px;white-space:nowrap}.dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-fb-dcs-tb{margin:0;margin-bottom:8px}.dcs-a-dcs-d-dcs-qg .dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-fb-dcs-tb{margin:0}.dcs-a-dcs-fb-dcs-jh{width:1px;white-space:nowrap}.dcs-a-dcs-d:hover .dcs-a-dcs-ff-dcs-yb,.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ff-dcs-yb,.dcs-a-dcs-d.dcs-a-dcs-vc-dcs-tf .dcs-a-dcs-ff-dcs-yb,.dcs-a-dcs-d:hover .dcs-a-dcs-xb-dcs-yb,.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-xb-dcs-yb,.dcs-a-dcs-d.dcs-a-dcs-vc-dcs-tf .dcs-a-dcs-xb-dcs-yb,.dcs-a-dcs-d:hover .dcs-a-dcs-ob-dcs-zb-dcs-l,.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ob-dcs-zb-dcs-l,.dcs-a-dcs-d.dcs-a-dcs-vc-dcs-tf .dcs-a-dcs-ob-dcs-zb-dcs-l,.dcs-a-dcs-d:hover .dcs-a-dcs-jd-dcs-rb>.dcs-a-dcs-vc-dcs-pe,.dcs-a-dcs-d.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-jd-dcs-rb>.dcs-a-dcs-vc-dcs-pe,.dcs-a-dcs-d.dcs-a-dcs-vc-dcs-tf .dcs-a-dcs-jd-dcs-rb>.dcs-a-dcs-vc-dcs-pe{opacity:0.7}.dcs-a-dcs-jd-dcs-rb .dcs-r-dcs-lf{z-index:600}.dcs-a-dcs-fb-dcs-jh:hover .dcs-a-dcs-ff-dcs-yb,.dcs-a-dcs-fb-dcs-jh:hover .dcs-a-dcs-ob-dcs-zb-dcs-l{border-top-right-radius:0;border-bottom-right-radius:0}.dcs-a-dcs-fb-dcs-jh>.dcs-a-dcs-ff-dcs-yb:hover,.dcs-a-dcs-fb-dcs-jh>.dcs-a-dcs-ob-dcs-zb-dcs-l:hover{border-top-right-radius:2px;border-bottom-right-radius:2px}.dcs-a-dcs-ob-dcs-bg .dcs-a-dcs-fb-dcs-jh{padding:4px 0 4px 4px}.dcs-a-dcs-xb-dcs-yb{margin-right:-1px}.dcs-a-dcs-fb-dcs-qf{width:100%;padding-left:10px;vertical-align:top}.dcs-a-dcs-fb-dcs-qf-dcs-rb{position:relative}.dcs-a-dcs-fb-dcs-qf-dcs-u{position:absolute;width:100%}.dcs-a-dcs-fb-dcs-qf-dcs-u div{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.dcs-a-dcs-fb-dcs-o-dcs-ne{display:inline-block;max-width:32px}.dcs-a-dcs-fb-dcs-tb .dcs-a-dcs-o{position:relative}.dcs-a-dcs-rd-dcs-sd{width:32px;height:6px}.dcs-a-dcs-fb-dcs-tb table{border-spacing:0;width:100%}.dcs-a-dcs-ob-dcs-zb-dcs-l{display:table-cell;opacity:0.2;padding-left:2px;position:relative;padding:0 4px 0 4px;min-width:50px;height:28px;vertical-align:top}.dcs-a-dcs-fb .dcs-a-dcs-ob-dcs-i{margin-left:0}.dcs-a-dcs-fb-dcs-qe{word-wrap:break-word;color:#777;margin-top:8px;padding-top:5px;border-color:#ddd;border-top-style:solid;border-top-width:1px;font-size:11px}.dcs-a-dcs-p{background:#e0ecff;border:1px solid #666;color:#00c;font-family:Arial;margin:0px 0px;padding:0px 0px 1px 0px;position:absolute;z-index:900}.dcs-a-dcs-p div{cursor:pointer;margin:2px;padding:0px 10px}.dcs-a-dcs-p div b{color:#00f}.dcs-a-dcs-p .dcs-p-dcs-q{height:auto}.dcs-a-dcs-p div.dcs-ge{background:#c3d9ff}.dcs-a-dcs-o{left:0;position:absolute}.dcs-a-dcs-hg-dcs-ig{font:10px/12px Arial;color:#bbb;text-align:right;padding-right:30px}.dcs-a-dcs-hg-dcs-ig a{color:#bbb}.dcs-a-dcs-pc-dcs-qc{width:620px}.dcs-a{color:black;font-family:Arial,sans-serif,sans;font-size:13px;white-space:normal}.dcs-a-dcs-xc{background-image:url(//ssl.gstatic.com/docs/common/d-icons18.png);background-repeat:no-repeat}.dcs-a-dcs-xc-dcs-zb-dcs-od{background-position:0 0;height:37px;position:absolute;width:37px}.dcs-a-dcs-xc-dcs-zb-dcs-od-dcs-pd{background-position:0 -37px;height:27px;position:absolute;width:27px}.dcs-a-dcs-xc-dcs-gi-dcs-pe{background-position:0 -106px;height:11px;width:12px}.dcs-a-dcs-xc-dcs-gi-dcs-pe:hover,.dcs-r-dcs-lf-dcs-l-dcs-pf .dcs-a-dcs-xc-dcs-gi-dcs-pe{background-position:-27px -52px;height:11px;width:12px}.dcs-a-dcs-xc-dcs-hf{background-position:-26px -117px;height:13px;width:11px}.dcs-a-dcs-xc-dcs-ih-dcs-uc{background-position:-1px -88px;height:14px;width:18px}.dcs-a-dcs-xc-dcs-xb-dcs-yb-dcs-od{background-position:-21px -92px;height:21px;width:21px}.dcs-a-dcs-xc-dcs-ff-dcs-yb-dcs-gf{background-position:0 -64px;height:21px;width:21px}.dcs-a-dcs-xc-dcs-be-dcs-ce-dcs-de{background-position:-4px -117px;height:21px;width:14px}.dcs-a-dcs-e{position:relative;zoom:1}.dcs-a-dcs-e.dcs-a-dcs-e-dcs-yc{display:block!important}.dcs-a-dcs-e-dcs-t-dcs-u{border-top:7px solid transparent;border-right:8px solid #fff;border-bottom:7px solid transparent;height:0;left:-6px;position:absolute;top:3px}.dcs-a-dcs-e-dcs-t-dcs-rb{border-top:7px solid transparent;border-right:8px solid #c8c8c8;border-bottom:7px solid transparent;height:0;left:-7px;position:absolute;top:3px}.dcs-a-dcs-e-dcs-ee{border:1px solid #c8c8c8;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-webkit-box-sizing:border-box;color:#999;font-family:Arial,sans-serif;font-size:13px;margin:0;overflow-x:hidden;overflow-y:hidden;outline-width:0!important;padding:4px;resize:none;width:100%}.dcs-a-dcs-e-dcs-ee:disabled{background-color:#eee!important}*:first-child+html .dcs-a-dcs-e-dcs-ee{width:95%}.dcs-a-dcs-e-dcs-tc{display:none;zoom:1}.dcs-a-dcs-e-dcs-tc-dcs-wf{font-weight:bold}.dcs-a-dcs-e-dcs-bd>.dcs-a-dcs-e-dcs-ee{color:#000}.dcs-a-dcs-e-dcs-bd>.dcs-a-dcs-e-dcs-tc{display:block}.dcs-a-dcs-kc-dcs-lc-dcs-xc{display:inline-block;vertical-align:middle;margin:4px 5px 5px 2px}.dcs-a-dcs-kc-dcs-lc{text-align:left}.dcs-a-dcs-kc-dcs-lc-dcs-mc{display:inline-block;height:17px}.dcs-a-dcs-kc-dcs-lc-dcs-hi{visibility:hidden}.dcs-a-dcs-ie-dcs-x{width:500px}.dcs-a-dcs-ie-dcs-kg{padding:0 3px 0 8px}.dcs-a-dcs-ie-dcs-ac{padding-left:3px}.dcs-a-dcs-ie-dcs-eg{position:absolute;right:20px}.dcs-a-dcs-ie-dcs-dh{background-color:#c1d9ff;border:0;color:#c1d9ff;height:1px;margin:10px 0 10px 0}.dcs-a-dcs-jd-dcs-rb{display:table-cell}.dcs-a-dcs-jd-dcs-rb>.dcs-a-dcs-vc-dcs-pe{border:1px solid transparent;width:14px;height:28px;margin:auto;position:relative;left:-1px;opacity:0.2}.dcs-a-dcs-jd-dcs-rb>.dcs-a-dcs-vc-dcs-pe:hover,.dcs-a-dcs-jd-dcs-rb>.dcs-a-dcs-vc-dcs-pe:focus{border:1px solid #4d90fe;border-top-left-radius:0;border-bottom-left-radius:0}.dcs-a-dcs-jd-dcs-rb .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-u-dcs-y,.dcs-a-dcs-jd-dcs-rb .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-rb-dcs-y{min-width:14px;margin:0;padding:0}.dcs-a-dcs-jd-dcs-rb .dcs-a-dcs-xc{vertical-align:middle;opacity:0.7}.dcs-a-dcs-jd-dcs-rb .dcs-r-dcs-kf-dcs-lf-dcs-l-dcs-pe{display:none}.dcs-a-dcs-nb .dcs-ue-dcs-mb-dcs-nb{display:none!important}.dcs-lb-dcs-mb-dcs-nb{display:none}.dcs-a-dcs-nb .dcs-lb-dcs-mb-dcs-nb{display:inline-block!important}.dcs-a-dcs-zb-dcs-nf{border:1px solid rgba(0,0,0,0.2)}.dcs-a-dcs-zb-dcs-mg{-webkit-transition:all 270ms ease-out;-moz-transition:all 270ms ease-out;-o-transition:all 270ms ease-out;transition:all 270ms ease-out;-webkit-transform:scale(0.3);-moz-transform:scale(0.3);-o-transform:scale(0.3);transform:scale(0.3);-webkit-transform-origin:center top;-moz-transform-origin:center top;-o-transform-origin:center top;transform-origin:center top;opacity:0.3}#docos-shadow{background:#000;background:rgba(0,0,0,0.7);color:#fff;position:absolute;z-index:700;left:0;top:0}#docos-shadow,.dcs-a-dcs-ab-dcs-bb{height:100%;width:100%}#docos-shadow-description{font-weight:bold}#docos-shadow-confirm,#docos-shadow-delete{margin:2px 7px}.dcs-a-dcs-cb .dcs-a-dcs-e-dcs-tc{padding-bottom:6px}.dcs-a-dcs-cb .dcs-a-dcs-e-dcs-wf{margin:0 4px 0 0}.dcs-a-dcs-cb .dcs-a-dcs-e-dcs-hb{background:none}.dcs-a-dcs-h{border-top:1px solid #e8e8e8;font-family:Arial,sans-serif;font-size:12px;padding:18px 0 7px 0;position:relative;outline:none;zoom:1}.dcs-a-dcs-h:last-child{padding-bottom:0}.dcs-a-dcs-h:last-child .dcs-a-dcs-h-dcs-rf{padding-bottom:0}.dcs-a-dcs-h .dcs-a-dcs-cc-dcs-th{min-height:48px}.dcs-a-dcs-pg{margin-right:12px;min-height:51px;padding:0 6px;position:relative;top:-3px}.dcs-a-dcs-cc-dcs-eh .dcs-a-dcs-pg{background-color:#f6f6f6}.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-pg{background-color:#fffbe1}.dcs-a-dcs-h-dcs-x{margin-left:60px;position:relative}.dcs-a-dcs-h-dcs-zc{font-weight:bold}.dcs-a-dcs-h-dcs-gb{color:#333;word-wrap:break-word;top:-7px;zoom:1}.dcs-a-dcs-h .dcs-a-dcs-xc-dcs-zb-dcs-od-dcs-pd{display:none;right:5px;top:-12px}.dcs-a-dcs-h.dcs-a-dcs-cc-dcs-eh .dcs-a-dcs-xc-dcs-zb-dcs-od-dcs-pd{display:block}.dcs-a-dcs-h-dcs-fe,.dcs-a-dcs-h-dcs-yf-dcs-zf{font-size:11px;color:#999;padding:0}.dcs-a-dcs-h-dcs-fe,.dcs-a-dcs-h-dcs-he-dcs-ac{right:2px}.dcs-a-dcs-h-dcs-v{color:#ccc;font-size:12px;line-height:100%;padding:0 2px}.dcs-a-dcs-h-dcs-rf{padding:4px 0}.dcs-a-dcs-h-dcs-fe:hover{text-decoration:underline;cursor:pointer}.dcs-a-dcs-h-dcs-e-dcs-f{padding-right:6px;margin-left:30px}.dcs-a-dcs-h-dcs-e-dcs-f .dcs-a-dcs-e-dcs-ee{background-color:#fff;border:1px solid #c9d4ec;height:23px;font-size:12px}.dcs-a-dcs-h-dcs-e-dcs-f.dcs-a-dcs-e-dcs-bd .dcs-a-dcs-e-dcs-ee{background-color:#fff}.dcs-a-dcs-h-dcs-i-dcs-f .dcs-a-dcs-e-dcs-ee{height:36px}.dcs-a-dcs-h-dcs-ae,.dcs-a-dcs-h-dcs-ld{margin:4px 12px 3px 0}.dcs-a-dcs-h-dcs-ae{background-color:#eff2f9;-moz-border-radius:0 0 6px 6px;-webkit-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px;padding:6px 0 2px 6px;position:relative;zoom:1}.dcs-a-dcs-cc-dcs-eh .dcs-a-dcs-h-dcs-ae{background-color:#f6f6f6}.dcs-a-dcs-h-dcs-se{position:absolute;right:0;top:0}.dcs-a-dcs-h.dcs-a-dcs-cc-dcs-eh .dcs-a-dcs-h-dcs-se{right:33px}.dcs-a-dcs-h-dcs-qb{background-color:#fe8;bottom:0;left:0;padding:2px 0;position:absolute;width:100%}.dcs-a-dcs-qb-dcs-tb{font-weight:bold;margin:0 6px;padding:2px 0}.dcs-a-dcs-h .dcs-a-dcs-af-dcs-rb{position:absolute;right:-12px;top:3px}.dcs-a-dcs-h-dcs-he-dcs-ac{display:inline}.dcs-a-dcs-h-dcs-he-dcs-ac>.dcs-a-dcs-cc-dcs-he{font-size:11px;color:#15c}.dcs-a-dcs-h-dcs-uc-dcs-ac>.dcs-a-dcs-cc-dcs-uc,.dcs-a-dcs-h-dcs-zb-dcs-ac>.dcs-a-dcs-cc-dcs-zb{color:#999;line-height:100%}.dcs-a-dcs-h-dcs-uc-dcs-ac>.dcs-a-dcs-cc-dcs-uc:hover,.dcs-a-dcs-h-dcs-he-dcs-ac>.dcs-a-dcs-cc-dcs-he:hover,.dcs-a-dcs-h-dcs-zb-dcs-ac>.dcs-a-dcs-cc-dcs-zb:hover{text-decoration:underline;cursor:pointer}.dcs-a-dcs-pg:hover .dcs-a-dcs-cc-dcs-uc,.dcs-a-dcs-pg:hover .dcs-a-dcs-cc-dcs-zb,.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-cc-dcs-uc,.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-cc-dcs-zb{color:#15c}.dcs-a-dcs-cb-dcs-if{line-height:140%;outline:none}.dcs-a-dcs-cb-dcs-x{position:relative}.dcs-a-dcs-cb-dcs-db{color:#15c;cursor:pointer;font-size:12px;position:absolute;right:0;top:-3px}.dcs-a-dcs-cb-dcs-db:hover{text-decoration:underline}.dcs-a-dcs-kh .dcs-a-dcs-cb-dcs-db{color:#999;cursor:default}.dcs-a-dcs-kh .dcs-a-dcs-cb-dcs-db:hover{text-decoration:none}.dcs-a-dcs-cb-dcs-of{bottom:-10px;color:#15c;cursor:pointer;font-size:12px;padding-right:5px;padding-top:5px;position:absolute;right:5px;text-decoration:none}.dcs-a-dcs-kh .dcs-a-dcs-cb-dcs-of{display:none}.dcs-a-dcs-cb-dcs-sb{color:#333;padding:12px 0 12px 20px}.dcs-a-dcs-cb-dcs-eb{margin:6px 29px 10px 20px;position:relative;zoom:1}.dcs-a-dcs-cb-dcs-eb-dcs-x{margin-left:61px;position:relative;zoom:1}.dcs-a-dcs-cb-dcs-fg{font-size:12px;font-weight:bold;margin-bottom:3px;top:-3px}.dcs-a-dcs-cb-dcs-ye{font-size:1.2em;margin:20px 5px 2px}.dcs-a-dcs-cb-dcs-e-dcs-f{top:-4px}.dcs-a-dcs-cb-dcs-e-dcs-f .dcs-a-dcs-e-dcs-wf{font-weight:bold}.dcs-a-dcs-cb-dcs-e-dcs-f .dcs-a-dcs-e-dcs-ee{font-size:12px;height:30px}.dcs-a-dcs-cb .dcs-a-dcs-e-dcs-vb-dcs-wb-dcs-kb,.dcs-a-dcs-cb .dcs-a-dcs-e-dcs-ib-dcs-jb-dcs-kb{color:#666}.dcs-a-dcs-cb-dcs-yg{background-color:#dd4b39;border:1px solid #602019;border-radius:4px;color:#fff;margin:6px;padding:6px;text-align:center}.dcs-a-dcs-cb-dcs-tb{overflow:hidden;padding:10px 29px 10px 20px;background-color:#f5f5f5}.dcs-a-dcs-cb-dcs-tb .dcs-a-dcs-md-dcs-nd,.dcs-a-dcs-cb-dcs-tb .dcs-a-dcs-wc-dcs-uc-dcs-l,.dcs-a-dcs-cb-dcs-tb .dcs-a-dcs-sh-dcs-l{display:inline-block;float:right}.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l,.dcs-a-dcs-cb-dcs-tb .dcs-j-dcs-l{border-color:transparent;background-color:transparent;background-image:none}.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh,.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ge,.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pf,.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-xg,.dcs-a-dcs-cb-dcs-tb .dcs-j-dcs-l-dcs-qh,.dcs-a-dcs-cb-dcs-tb .dcs-j-dcs-l-dcs-ge,.dcs-a-dcs-cb-dcs-tb .dcs-j-dcs-l-dcs-xg{border-color:#c6c6c6;background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-moz-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-ms-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:-o-linear-gradient(top,#f8f8f8,#f1f1f1);background-image:linear-gradient(top,#f8f8f8,#f1f1f1)}.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe{visibility:hidden}.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-qh .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe,.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ge .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe,.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pf .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe,.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-xg .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-pe{visibility:visible}.dcs-a-dcs-cb-dcs-tb .dcs-r-dcs-je-dcs-lf-dcs-l-dcs-ke .dcs-a-dcs-kc-dcs-lc-dcs-xc{opacity:0.3}.dcs-a-dcs-cb-dcs-tb .dcs-j-dcs-l-dcs-ke .dcs-a-dcs-wc-dcs-uc-dcs-xc{opacity:0.15}.dcs-a-dcs-cb-dcs-tb .dcs-a-dcs-wc-dcs-uc-dcs-l,.dcs-a-dcs-cb-dcs-tb .dcs-a-dcs-sh-dcs-l{margin-left:12px;margin-right:0}.dcs-a-dcs-rc-dcs-sc{padding:0 29px 0 20px}.dcs-a-dcs-gh-dcs-hh-dcs-tb .dcs-a-dcs-rc-dcs-sc{position:relative;overflow:auto;max-height:450px}.dcs-a-dcs-gh-dcs-hh-dcs-tb .dcs-a-dcs-rc-dcs-sc>.dcs-a-dcs-h:first-child{border-top-color:transparent}.dcs-a-dcs-wc-dcs-uc-dcs-xc{display:inline-block;vertical-align:middle;margin:4px 5px 5px 2px;opacity:0.65}.dcs-a-dcs-w{background-color:#eff2f9;color:#666;font-size:12px;padding:6px 6px 0 6px;position:relative;margin-bottom:3px;min-height:24px}.dcs-a-dcs-cc-dcs-eh .dcs-a-dcs-w{background-color:#f6f6f6}.dcs-a-dcs-w-dcs-o{left:6px}.dcs-a-dcs-w-dcs-x{padding-left:30px}.dcs-a-dcs-w-dcs-hc{color:black;font-weight:bold;left:-2px;margin:0 4px;right:-2px}.dcs-a-dcs-w-dcs-gb{color:#333;margin:0;top:-4px;width:100%;word-wrap:break-word}.dcs-a-dcs-w-dcs-mc,.dcs-a-dcs-w-dcs-fe{position:relative;top:-3px}.dcs-a-dcs-w-dcs-mc{width:100%}.dcs-a-dcs-w-dcs-fe{color:#999;font-size:11px;white-space:pre}.dcs-a-dcs-h .dcs-a-dcs-w .dcs-a-dcs-ob-dcs-ac{display:inline;top:-3px;z-index:-1}.dcs-a-dcs-h .dcs-a-dcs-w:hover .dcs-a-dcs-ob-dcs-ac,.dcs-a-dcs-h .dcs-a-dcs-w .dcs-a-dcs-ob-dcs-ac-dcs-xg{z-index:auto}.dcs-a-dcs-w-dcs-i-dcs-f .dcs-a-dcs-e-dcs-ee{height:23px}.dcs-a-dcs-h .dcs-a-dcs-ob-dcs-pb{border-left:1px solid #ccc;font-style:italic;padding:3px 10px 3px 10px;position:relative;zoom:1;word-wrap:break-word}.dcs-a-dcs-ob-dcs-pb-dcs-lc{font-size:11px;color:#999;margin-right:2px;padding:0}.dcs-a-dcs-ob-dcs-pb-dcs-ec{overflow:hidden;height:18px}.dcs-a-dcs-ob-dcs-pb-dcs-fc{background:#fff;padding:3px 5px 0 5px;position:absolute;right:0;top:0}.dcs-a-dcs-ob-dcs-pb-dcs-m,.dcs-a-dcs-ob-dcs-pb-dcs-fc{color:#15c;visibility:hidden}.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ob-dcs-pb-dcs-m,.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ob-dcs-pb-dcs-fc{visibility:visible}.dcs-a-dcs-ob-dcs-pb-dcs-m{padding-left:3px}.dcs-a-dcs-cc-dcs-ge .dcs-a-dcs-ob-dcs-pb-dcs-fc{background:#fffbe1}.dcs-a-dcs-ob-dcs-pb-dcs-m:hover,.dcs-a-dcs-ob-dcs-pb-dcs-fc:hover{cursor:pointer;text-decoration:underline}.dcs-a-dcs-ee{margin:0;padding:2px;font-family:arial,sans-serif;outline-width:0!important;resize:none}.dcs-a-dcs-ob-dcs-td,.dcs-a-dcs-ob-dcs-i{color:#15c;font-size:11px;margin:0 2px}.dcs-a-dcs-ob-dcs-td:hover,.dcs-a-dcs-ob-dcs-i:hover{text-decoration:underline;cursor:pointer}.dcs-a-dcs-e-dcs-hb{margin:0 0}.dcs-a-dcs-e-dcs-wf{margin:8px 7px 0 0}</style><script type="text/javascript" charset="UTF-8" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/api.js" gapi_processed="true"></script><script src="./The Arduino DAQ Chronicles - Measuring Stuff_files/ga.js"></script></head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+<tbody><tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><a href="https://sites.google.com/site/measuringstuff/" id="sites-chrome-userheader-logo"><img id="logo-img-id" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/customLogo.gif" alt="Measuring Stuff" class="sites-logo  "></a><h2><a href="https://sites.google.com/site/measuringstuff/" dir="ltr" id="sites-chrome-userheader-title">Measuring Stuff</a></h2></div></td><td class="sites-layout-searchbox  "><div class="sites-header-cell-buffer-wrapper"><form id="sites-searchbox-form" action="https://sites.google.com/site/measuringstuff/system/app/pages/search" role="search"><input type="hidden" id="sites-searchbox-scope" name="scope" value="search-site"><input type="text" id="jot-ui-searchInput" name="q" size="20" value="" aria-label="Search this site"><div id="sites-searchbox-button-set" class="goog-inline-block"><div role="button" id="sites-searchbox-search-button" class="goog-inline-block jfk-button jfk-button-standard" tabindex="0" style="-webkit-user-select: none;">Search this site</div></div></form></div></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</tbody></table> 
+</div> 
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left initial" style="width:200px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_24064195342361927" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/home" jotid="wuid:gx:18e982f1f686917" class="sites-navigation-link">Home</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/meet-the-arduinos" jotid="wuid:gx:698e9991fa2c40ac" class="sites-navigation-link">Meet the Arduinos</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/code-examples" jotid="wuid:gx:1aad8a01132193b5" class="sites-navigation-link">Sensor Examples</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/more-sensor-examples" jotid="wuid:gx:691bb7e4a1e05d2e" class="sites-navigation-link">More Sensor Examples</a></div></li><li class=""><div class="current-bg" jotid="wuid:gx:69d1f217b6677023" dir="ltr" style="padding-left: 5px;">The Arduino DAQ Chronicles</div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/arduino-notes" jotid="wuid:gx:55cada526e5d6d18" class="sites-navigation-link">Meandering Arduino Notes</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/data-storage-retrieval" jotid="wuid:gx:14b3acfae575a7dc" class="sites-navigation-link">Data Storage &amp; Retrieval</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/display-calculate" jotid="wuid:gx:4fdea4c757ec62cc" class="sites-navigation-link">Display &amp; Calculate</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/site/measuringstuff/links" jotid="wuid:gx:371b3ede633214aa" class="sites-navigation-link">Links &amp; References</a></div></li></ul></div></div>
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">The Arduino DAQ Chronicles</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div></div><div><span style="font-size:19px"><font color="#8DA1AD"><div class="sites-embed-align-left-wrapping-off"><div class="sites-embed-border-off sites-embed sites-embed-full-width" style="width:100%;"><div class="sites-embed-content sites-embed-type-toc"><div class="goog-toc sites-embed-toc-maxdepth-6"><p>Contents</p><ol class="goog-toc"><li class="goog-toc"><a href="https://sites.google.com/site/measuringstuff/the-arduino#TOC-Introduction"><strong>1 </strong>Introduction</a></li><li class="goog-toc"><a href="https://sites.google.com/site/measuringstuff/the-arduino#TOC-Resolution"><strong>2 </strong>Resolution</a></li><li class="goog-toc"><a href="https://sites.google.com/site/measuringstuff/the-arduino#TOC-Sample-Rates"><strong>3 </strong>Sample Rates</a></li><li class="goog-toc"><a href="https://sites.google.com/site/measuringstuff/the-arduino#TOC-ADC-Responsiveness"><strong>4 </strong>ADC&nbsp;Responsiveness</a></li><li class="goog-toc"><a href="https://sites.google.com/site/measuringstuff/the-arduino#TOC-Digging-Deeper---Speeding-It-Up"><strong>5 </strong>Digging Deeper - Speeding It Up</a></li><li class="goog-toc"><a href="https://sites.google.com/site/measuringstuff/the-arduino#TOC-Yeah-Well-One-Hundred-Samples-Seems-a-Bit-Limiting-and-That-Timing-Thing..."><strong>6 </strong>Yeah, Well, One Hundred Samples Seems a Bit Limiting, and That Timing Thing...</a></li></ol></div></div></div></div></font></span></div><div><font size="6"><span style="font-size:19px"><br></span></font></div><div><hr></div><h3><a name="TOC-Introduction"></a>Introduction</h3><div style="display:inline;float:left;margin-top:5px;margin-right:10px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/measuringstuff/the-arduino/megasetup.JPG?attredirects=0" imageanchor="1"><img border="0" height="200" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/megasetup.JPG" width="150"></a></div><div>This page should really be called "Using the Arduino as a Really Inexpensive DAQ." &nbsp;This is where we dive into the limits of the using the Arduino as a data collector. &nbsp;Here you will find the information you need to know in order to determine when to move on to another <a href="http://leaflabs.com/store/" target="_blank" rel="nofollow">board</a>, or a dedicated <a href="http://labjack.com/u3" rel="nofollow">DAQ</a>. &nbsp; The photo shows the Arduino Mega setup used for testing - a&nbsp;piece&nbsp;of bent&nbsp;acrylic&nbsp;with a section cut out for mounting a <a href="http://www.sparkfun.com/commerce/product_info.php?products_id=9066" rel="nofollow">serial LCD</a>&nbsp;and a couple of breadboards glued in place. &nbsp;The Mega, using a 1280 chip, runs at the same speed as the Atmega based 328 Arduino boards, the only difference being some extra memory and more I/O ports, and of course a higher price tag ($37 to $39 on ebay). &nbsp;Also note that the Mega does not have a replaceable chip, so this is probably not the board to use for experimentation. &nbsp;That said, I am using the Mega (do as I say, not as I do), and the results are equally valid for any Atmel, 5 volt, 328 chip running at 16 MHz, i.e the common (for good reason)&nbsp;<a href="http://www.sparkfun.com/products/9950" target="_blank" rel="nofollow">Arduino Uno</a>.</div><div><br></div><div>Before you collect data, there are two things you might want to know --&nbsp;<b>sample rate and</b>&nbsp;<b>resolution. </b>&nbsp;There's also a secondary problem of system&nbsp;responsiveness - see <a href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1263742458" rel="nofollow">&nbsp;this</a>. &nbsp;Are these comments valid? &nbsp;We'll see. &nbsp;If you have a drive shaft capable of spinning at 10,000 rpm (167 revolutions per second), it doesn't do any good to hook it up to a collector that can only sample at 100 times a second. &nbsp;Likewise, suppose you have a sensor hooked up to that same shaft that measures the reflection from a thin white stripe drawn along the axis of the otherwise black background. &nbsp;Let's say the voltage variation due to the increased light reflection of the white stripe passing by the sensor drives the voltage of the sensor from 0 volts to .05 volts. &nbsp;We are merely wasting our time if our collector can only measure voltage changes of .1 volt; that's the importance of resolution. &nbsp;So what is an Arduino capable of?</div><div><br></div><h3><a name="TOC-Resolution"></a><span style="font-size:1.4em;background-color:transparent">Resolution</span></h3><div><br></div><div>First we'll look at the resolution issue. &nbsp;The analog to digital converters (ADC) on the Arduino have 10 bit resolution. &nbsp;The bits of resolution is an&nbsp;obfuscation that means 2^10, or 1024 divisions (0 to 1023), of the reference voltage, &nbsp;If someone tries to sell you a DAQ with with 4 bit resolution, you'll probably want to pass, since this would divide the reference voltage into 2^4, or 16 parts (0 to 15 steps). &nbsp;For an Arduino, the reference voltage is usually 5 volts, and that means the smallest detectable voltage variation is 5/1023 or .0049 volts (4.9 mV). &nbsp;That's not too bad, and there are some easy ways to adjust the system for even better resolution. &nbsp;The Arduino ADC ports are normally tied to a 5 volt reference, but this is adjustable. &nbsp;Let's say you have a sensor that outputs in the millivolt (mV) range and 0.002 volt is significant. &nbsp;We can easily use <a href="http://arduino.cc/en/Reference/AnalogReference" target="_blank" rel="nofollow">software to change the ADC port reference to 1.1 volts</a>, and that gives us a resolution of 1.1/1023 or 0.0011. &nbsp;A non-adjustable, 5 volt, 12 bit DAQ has, 4096 steps, giving a minimum change of 0.0012 volts; so we just matched the resolution of a 12 bit DAQ referenced to 5 volts by adjusting our reference voltage. &nbsp;You're not limited to 5 or 1.1 volt references since there is also an EXTERNAL setting allowing any voltage between 5 and 1.1 volts. I've read where the external voltage cannot be less than 1.1 volts, but I've never tested this information.&nbsp;</div><div><br></div><div>Although you can directly tie an external voltage to the AREF pin, it's safer to use a <a href="http://en.wikipedia.org/wiki/Voltage_divider" target="_blank" rel="nofollow">voltage divider </a>to set a non-standard voltage, i.e. not the internally available 5v or 1.1v. Let's say we have a sensor that operates from 0 to 2 volts. &nbsp;We might as well match that range to get maximum resolution. The <a href="http://arduino.cc/en/Reference/AnalogReference" target="_blank" rel="nofollow">reference page says</a>&nbsp;it is safer to place a voltage on the AREF pin using a resistance in series with our voltage pin. &nbsp;There is a 32K internal resistance built into the pin. &nbsp;With that in mind, lets use one of the many <a href="http://www.raltron.com/cust/tools/voltage_divider.asp" target="_blank" rel="nofollow">voltage divider calculators</a> on the web with 32K ohms for R2 (internal resistance), &nbsp;2.0 volts for Vout, and 3.3 volts for Vin (use the Arduino 3.3 volt pin). The&nbsp;calculator&nbsp;gives us,<div style="display:block;text-align:left"><a href="https://sites.google.com/site/measuringstuff/the-arduino/Resistive_divider.png?attredirects=0" imageanchor="1"><img border="0" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/Resistive_divider.png"></a><br><br></div>~21K ohms. &nbsp;So we set analogReference(EXTERNAL) in our software and place a 21K resistor between the 3.3 volt pin and AREF. &nbsp;Remember, the pin voltages found on your board will vary according to the power source. &nbsp;Here's what I get:</div><div><br></div><div><table border="1" bordercolor="#888888" cellspacing="0" style="border-color:rgb(136,136,136);border-width:1px;border-collapse:collapse"><tbody><tr><td style="width:60px">&nbsp;</td><td style="width:60px">3.3 v pin&nbsp;</td><td style="width:60px">&nbsp;5 v pin</td></tr><tr><td style="width:60px">&nbsp;USB power only</td><td style="width:60px">&nbsp;3.41 v</td><td style="width:60px">&nbsp;4.78 v</td></tr><tr><td style="width:60px">&nbsp;9 v battery</td><td style="width:60px">&nbsp;3.42 v</td><td style="width:60px">&nbsp;5.02 v</td></tr><tr><td style="width:60px">&nbsp;9 v power supply</td><td style="width:60px">&nbsp;3.42 v</td><td style="width:60px">&nbsp;5.02 v</td></tr></tbody></table>&nbsp;&nbsp; &nbsp;&nbsp;</div><div>The moral here is to beware of running the board on USB power only.</div><div><br></div><h3><a name="TOC-Sample-Rates"></a>Sample Rates</h3><div><br></div><div>Now, we tackle sample rates, and this gets a bit tricky. &nbsp;A DAQ does nothing but collect data at given time intervals. &nbsp;If we tell a DAQ to sample&nbsp;temperature&nbsp;at 500 samples a second you'll get 500 voltage values every second, and you can be assured that each sample was taken&nbsp;precisely at 0.002 seconds (2 ms) spacing. &nbsp;There is no need to collect the time from a DAQ, since we <i>know </i>the time spacing between each sample. &nbsp;This timing certainty doesn't hold with the Arduino. &nbsp;The Arduino does not sample at precise intervals unless we force it to do so (with some difficulty). &nbsp;If the Arduino is looping, or calculating, there is a certain amount of CPU time being dedicated to those tasks. &nbsp;Data collection is not the primary focus of the Arduino, indeed it seems more like an afterthought. &nbsp; So, the easiest way to collect data with an Arduino is to just collect a time stamp and then the voltage signal. &nbsp;This is especially true if you are going to do calculations on the data. &nbsp;</div><div><br></div><div>To&nbsp;demonstrate&nbsp;Arduino sam<div style="margin:5px 10px 0pt 0pt;display:inline;float:left"><a href="https://sites.google.com/site/measuringstuff/the-arduino/tmp36b.jpg?attredirects=0" imageanchor="1"><img border="0" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/tmp36b.jpg"></a></div>pling from the simplest schemes, to the more complex, we'll use the following setup with an Analog Devices TMP36 temperature sensor. &nbsp;Lady Ada has&nbsp;<a href="http://www.ladyada.net/learn/sensors/tmp36.html" target="_blank" rel="nofollow">the definitive tutorial&nbsp;</a>on using this sensor with the Arduino, and I won't even try to improve on her fantastic write-up with one exception. &nbsp;Note the output of the sensor maxes out around 2 volts. &nbsp;To increase our resolution, we'll tie the AREF terminal to the 3.3 volt terminal using a 21K resistor. &nbsp;We could actually push the resolution issue further by using the 1.1 volt internal reference which handles room temperature and slightly above room temperature quite well (see the datasheet graph). &nbsp; A pushbutton switch has also been added that keeps digital pin 2 tied to ground until pushed and then it momentarily goes high. &nbsp;Physically, the temperature sensor looks like a transistor (same case), and the +5 vdc goes to the left hand pin when looking at the flat side of the case with leads extended downward (red wire in the picture where it is shown upside down).<br>&nbsp;&nbsp;</div><div>Now we'll write some simple code that will send temperature results to the serial monitor running at the snail's pace of 9600 baud. &nbsp;You can leave out LED13 and the pushbutton if you want to keep things simple.</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><div></div><div class="sites-codeblock sites-codesnippet-block"><div><code><br>/*</code></div><div><code>Sampling with the Arduino</code></div><div><code>example 1 - 9600 baud</code></div><div><code>from http://sites.goggle.com/site/MeasuringStuff</code></div><div><code>*/</code></div><div><br></div><div><code>// the famous LED on digital pin 13</code></div><div><code>byte ledPin = &nbsp;13;</code></div><div><code>// we'll use digital pin 2 to signal the start of data collection</code></div><div><code>byte letsStartPin = 2;</code></div><div><code>// read the temp sensor on analog pin 0</code></div><div><code>byte sensorPin = 0;</code></div><div><code>// time will be in millis (milliseconds)</code></div><div><code>unsigned long time;</code></div><div><code>// the raw temp data ranging from 0 to 1023</code></div><div><code>unsigned int analog0;<br></code></div><div><code>// tied the reference voltage AFREF to the 3.3 v pin using a 1K resistor</code></div><div><code>float arefVolts = 3.3;</code></div><div><code>// we'll let the arduino do the voltage calculation (arefVolts/1023)*analog0</code></div><div><code>float volts;</code></div><div><code>// ditto with the temp calc in C, 100*volts-50</code></div><div><code>float tempC;</code></div><div><code>// ditto for F, tempC*9/5+32</code></div><div><code>float tempF;</code></div><div><br></div><div><code>void setup() {<br>&nbsp; // set the reference pin voltage to 3.3 volts (measured with voltmeter)<br></code></div><div><code>&nbsp; </code><code>analogReference(EXTERNAL);<br></code><code>&nbsp;&nbsp;// initialize serial port:</code></div><div><code>&nbsp;&nbsp;Serial.begin(9600);</code></div><div><code>&nbsp;&nbsp;// signal ready to start by turning on LED 13</code></div><div><code>&nbsp;&nbsp;pinMode(ledPin, OUTPUT);</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, HIGH);</code></div><div><code>&nbsp;&nbsp;pinMode(letsStartPin,INPUT);</code></div><div><code>&nbsp;&nbsp;// endless loop until letsStartPin goes high;</code></div><div><code>&nbsp;&nbsp;do {&nbsp;</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;while (digitalRead(letsStartPin) == LOW);&nbsp;</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, LOW); &nbsp;</code></div><div><code>}</code></div><div><code>void loop() {</code></div><div><code>&nbsp;&nbsp;time=millis();</code></div><div><code>&nbsp;&nbsp;analog0=analogRead(0);</code></div><div><code>&nbsp;&nbsp;volts=(analog0/1023.0)*arefVolts;</code></div><div><code>&nbsp;&nbsp;tempC=100*volts-50;</code></div><div><code>&nbsp;&nbsp;tempF=tempC*9/5+32;</code></div><div><code>&nbsp;&nbsp;Serial.print(time);&nbsp;</code></div><div><code>&nbsp;&nbsp;Serial.print(" , ");</code></div><div><code>&nbsp;&nbsp;Serial.print(analog0);</code></div><div><code>&nbsp;&nbsp;Serial.print(" , ");</code></div><div><code>&nbsp;&nbsp;Serial.print(volts);&nbsp;</code></div><div><code>&nbsp;&nbsp;Serial.print(" , ");</code></div><div><code>&nbsp;&nbsp;Serial.print(tempC);&nbsp;</code></div><div><code>&nbsp;&nbsp;Serial.print(" , ");</code></div><div><code>&nbsp;&nbsp;Serial.println(tempF);&nbsp;</code></div><div><code>}</code></div></div></div><div><br></div><div>Here is a snippet of the output gathered using ttylog (ttylog -b 9600 -/dev/ttyUSB0 &gt;&gt; data.txt), there are&nbsp;similar&nbsp;programs in Windows like TeraTerm:<br><br></div><div>
+<div class="sites-codeblock sites-codesnippet-block"><code>75258 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75295 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75333 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75370 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75408 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75445 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75483 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75521 , 216 , 0.70 , 19.68 , 67.42
+</code><br><code>75557 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75595 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75632 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75670 , 216 , 0.70 , 19.68 , 67.42
+</code><br><code>75707 , 217 , 0.70 , 20.00 , 68.00
+</code><br><code>75745 , 217 , 0.70 , 20.00 , 68.00
+</code><br></div><br>The first column is the time in milliseconds. &nbsp;Note the rate is 37 to 38 ms per iteration. &nbsp;That's a sample rate of 26 samples per second. &nbsp;Works for a slow moving temperature scan, but not much else. &nbsp;So lets try running the same thing at 115200 baud. &nbsp;At that speed the average time interval between readings is 4 ms, giving a sample rate of 250 samples per second. &nbsp;So speeding up the serial transfer rate to the maximum (and a bit unstable) speed of 115200 gives a 10 fold increase. &nbsp;Can we do better? &nbsp;How about if we strip it down to bare bones.</div><div><br></div><div><div></div></div><div class="sites-codeblock sites-codesnippet-block"><div><div><code>/*</code></div><div><code>Sampling with the Arduino</code></div><div><code>example 3 - 115200 baud</code></div><div><code>from http://sites.goggle.com/site/MeasuringStuff</code></div><div><code>*/</code></div><div><br></div><div><code>// the famous LED on digital pin 13</code></div><div><code>byte ledPin = &nbsp;13;</code></div><div><code>// we'll use digital pin 2 to signal the start of data collection</code></div><div><code>byte letsStartPin = 2;</code></div><div><br></div><div><code>void setup() {</code></div><div><code>&nbsp;&nbsp;// initialize both serial ports:</code></div><div><code>&nbsp;&nbsp;Serial.begin(115200);</code></div><div><code>&nbsp;&nbsp;// signal ready to start by turning on LED 13</code></div><div><code>&nbsp;&nbsp;pinMode(ledPin, OUTPUT);</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, HIGH);</code></div><div><code>&nbsp;&nbsp;pinMode(letsStartPin,INPUT);</code></div><div><code>&nbsp;&nbsp;// endless loop until letsStartPin goes high;</code></div><div><code>&nbsp;&nbsp;do {&nbsp;</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;while (digitalRead(letsStartPin) == LOW);&nbsp;</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, LOW); &nbsp;</code></div><div><code>}</code></div><div><code>void loop() {</code></div><div><code>&nbsp;&nbsp;Serial.println(micros());&nbsp;</code></div><div><code>&nbsp;&nbsp;Serial.println(analogRead(0));</code></div><div><code>}</code></div></div><div></div></div><br><div>The output looks something like:</div><div><br></div><div>
+<table cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td align="right" style="font-size:10pt" valign="bottom"></td></tr></tbody></table><div class="sites-codeblock sites-codesnippet-block"><table cellpadding="3" cellspacing="0"><tbody><tr><td align="right" style="font-size:10pt" valign="bottom"><code>11278308</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>147</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>11280232</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>146</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>11282164</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>147</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>11284088</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>146</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>11286020</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>147</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>11287952</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>146</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>11289880</code></td>
+</tr>
+<tr>
+<td align="right" style="font-size:10pt" valign="bottom"><code>147</code></td>
+</tr>
+</tbody></table></div><br>
+</div><div>Now the time between reads is wavering between 1924 and 1932 microseconds, giving a sample rate per second of 517. &nbsp;Still a painfully slow data collection rate. &nbsp;Let's bypass the serial bus and do a short burst in memory. &nbsp;This technique won't be suitable for&nbsp;continuous&nbsp;sampling because the 8K memory (or 2K on an Atmega 328) is going to fill up real fast (remember sram is where variables are kept not the 128K/32K flash which is program storage space), especially with an unsigned long integer, but here goes. &nbsp;This code will give us the maximum sample rate allowable without resorting to&nbsp;interrupts&nbsp;and assembly code (we may come back to the&nbsp;interrupts&nbsp;though). &nbsp;If we have to do machine code, it's probably time to look at a low cost DAQ.&nbsp;</div><div><br></div><div></div><div class="sites-codeblock sites-codesnippet-block"><div><code>&nbsp;</code><code>/*</code></div><div><code>Sampling with the Arduino</code></div><div><code>example 4 - 9600 baud</code></div><div><code>from http://sites.goggle.com/site/MeasuringStuff</code></div><div><code>*/</code></div><div><br></div><div><code>// the famous LED on digital pin 13</code></div><div><code>byte ledPin = &nbsp;13;</code></div><div><code>// we'll use digital pin 2 to signal the start of data collection</code></div><div><code>byte letsStartPin = 2;</code></div><div><code>// our array size</code></div><div><code>int size=10;</code></div><div><code>unsigned long time[10];</code></div><div><code>unsigned int rawdata[10];</code></div><div><br></div><div><code>void setup() {</code></div><div><code>&nbsp;&nbsp;// initialize both serial ports:</code></div><div><code>&nbsp;&nbsp;Serial.begin(9600);</code></div><div><code>&nbsp;&nbsp;// signal ready to start by turning on LED 13</code></div><div><code>&nbsp;&nbsp;pinMode(ledPin, OUTPUT);</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, HIGH);</code></div><div><code>&nbsp;&nbsp;pinMode(letsStartPin,INPUT);</code></div><div><code>&nbsp;&nbsp;// endless loop until letsStartPin goes high;</code></div><div><code>&nbsp;&nbsp;do {&nbsp;</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;while (digitalRead(letsStartPin) == LOW);&nbsp;</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, LOW); &nbsp;</code></div><div><code>}</code></div><div><code>void loop() {</code></div><div><code>&nbsp;&nbsp;// avoid an internal loop structure - just do it</code></div><div><code>&nbsp;&nbsp;time[0]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[0]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[1]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[1]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[2]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[2]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[3]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[3]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[4]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[4]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[5]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[5]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[6]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[6]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[7]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[7]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[8]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[8]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;time[9]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[9]=analogRead(0);</code></div><div><code>&nbsp;&nbsp;for (int i=0;i&lt;size;i++) {</code></div><div><code>&nbsp;&nbsp; &nbsp;Serial.print(time[i]);</code></div><div><code>&nbsp;&nbsp; &nbsp;Serial.print(" , ");</code></div><div><code>&nbsp;&nbsp; &nbsp;Serial.println(rawdata[i]);</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;delay(5000);</code></div><div><code>}</code></div><div></div></div><br><div><br></div><div>The output for one iteration is:</div><div><br></div><div><div></div></div><div class="sites-codeblock sites-codesnippet-block"><div><div><code>23172108 , 149</code></div><div><code>23172220 , 149</code></div><div><code>23172332 , 149</code></div><div><code>23172452 , 149</code></div><div><code>23172572 , 149</code></div><div><code>23172692 , 149</code></div><div><code>23172812 , 149</code></div><div><code>23172932 , 149</code></div><div><code>23173052 , 149</code></div><div><code>23173172 , 149</code></div></div><div></div></div><br><div>Now, the time between samples is down to 120 microseconds, and that gives a sample rate of 8300 samples a second, being a decent rate for an inexpensive DAQ. &nbsp;The trick is then, to get a&nbsp;continuous&nbsp;sample from the system at rates above 500 samples per second. &nbsp;</div><h3><a name="TOC-ADC-Responsiveness"></a>ADC&nbsp;Responsiveness</h3><div><br></div><div>Another limitation that has not been discussed so far is the ability of the ADC to recover.&nbsp; Are we fooling ourselves in thinking that an 8K sampling rate is truly obtainable?&nbsp; The temperature sensor was hardly fluctuating, so it doesn't clue us in on the ADC limitations in terms of responsiveness. &nbsp;So, before going any further, the next test needs to be a sample of a fast fluctuating zero to five volt signal. &nbsp;We'll use a sine wave generator operating at 1000 Hz and 0 to 5 volts amplitude. &nbsp;If we truly have a responsive system at an approximate 8K sample rate, we should get eight representative samples along each sine cycle. &nbsp;This ought to be interesting. &nbsp;Here's the code:<br></div><div><br></div><div><div></div><div class="sites-codeblock sites-codesnippet-block"><div><code>&nbsp;/*</code></div><div><code>Sampling with the Arduino</code></div><div><code>example 5 - 9600 baud</code></div><div><code>from http://sites.goggle.com/site/MeasuringStuff</code></div><div><code>*/</code></div><div><br></div><div><code>// the famous LED on digital pin 13</code></div><div><code>byte ledPin = &nbsp;13;</code></div><div><code>// we'll use digital pin 2 to signal the start of data collection</code></div><div><code>byte letsStartPin = 2;</code></div><div><code>// our array size</code></div><div><code>int i=0;</code></div><div><code>int size=100;</code></div><div><code>unsigned long time[100];</code></div><div><code>unsigned int rawdata[100];</code></div><div><br></div><div><code>void setup() {</code></div><div><code>&nbsp;&nbsp;// initialize both serial ports:</code></div><div><code>&nbsp;&nbsp;Serial.begin(9600);</code></div><div><code>&nbsp;&nbsp;// signal ready to start by turning on LED 13</code></div><div><code>&nbsp;&nbsp;pinMode(ledPin, OUTPUT);</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, HIGH);</code></div><div><code>&nbsp;&nbsp;pinMode(letsStartPin,INPUT);</code></div><div><code>&nbsp;&nbsp;// endless loop until letsStartPin goes high;</code></div><div><code>&nbsp;&nbsp;do {&nbsp;</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;while (digitalRead(letsStartPin) == LOW);&nbsp;</code></div><div><code>&nbsp;&nbsp;digitalWrite(ledPin, LOW); &nbsp;</code></div><div><code>}</code></div><div><br></div><div><code>void loop() {</code></div><div><code>&nbsp;&nbsp;// avoid an internal loop structure - just do it</code></div><div><code>&nbsp;&nbsp;for (i=0 ;i&lt;size;i++){</code></div><div><code>&nbsp;&nbsp;time[i]=micros();</code></div><div><code>&nbsp;&nbsp;rawdata[i]=analogRead(0);&nbsp;</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;for (i=0;i&lt;size;i++) {</code></div><div><code>&nbsp;&nbsp; &nbsp;Serial.print(time[i]);</code></div><div><code>&nbsp;&nbsp; &nbsp;Serial.print(" , ");</code></div><div><code>&nbsp;&nbsp; &nbsp;Serial.println(rawdata[i]);</code></div><div><code>&nbsp;&nbsp;}</code></div><div><code>&nbsp;&nbsp;delay(5000);</code></div><div><code>}</code></div></div></div><div><br></div><div style="text-align:left">And, here is a graph of the output and a snippet of the 100 samples where the first column is time in microseconds, the second column is the rawdata in the form of 0 to 1023 corresponding to 0 to 5.02 volts, and the last column was added in a spreadsheet, and it is the time in microseconds&nbsp;between&nbsp;entries Lines of data).</div><div style="text-align:left"><br></div><div style="text-align:left"><div style="text-align:left"><div style="display:inline;float:left;margin-top:5px;margin-right:10px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/measuringstuff/the-arduino/1000kHz.jpg?attredirects=0" imageanchor="1"><img border="0" height="195" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/1000kHz.jpg" width="400"></a></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div><div style="text-align:left"><br></div></div><div class="sites-codeblock sites-codesnippet-block"><div style="text-align:left"><code>23198936</code><span style="white-space:pre"> </span><code>99</code><span style="white-space:pre"> </span></div><div style="text-align:left"><code>23199148</code><span style="white-space:pre"> </span><code>12</code><span style="white-space:pre"> </span><code>212</code></div><div style="text-align:left"><code>23199268</code><span style="white-space:pre"> </span><code>207</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23199388</code><span style="white-space:pre"> </span><code>574</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23199508</code><span style="white-space:pre"> </span><code>902</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23199628</code><span style="white-space:pre"> </span><code>1010</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23199752</code><span style="white-space:pre"> </span><code>830</code><span style="white-space:pre"> </span><code>124</code></div><div style="text-align:left"><code>23199868</code><span style="white-space:pre"> </span><code>473</code><span style="white-space:pre"> </span><code>116</code></div><div style="text-align:left"><code>23199988</code><span style="white-space:pre"> </span><code>132</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200108</code><span style="white-space:pre"> </span><code>8</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200228</code><span style="white-space:pre"> </span><code>169</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200348</code><span style="white-space:pre"> </span><code>525</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200468</code><span style="white-space:pre"> </span><code>869</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200588</code><span style="white-space:pre"> </span><code>1014</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200708</code><span style="white-space:pre"> </span><code>867</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200828</code><span style="white-space:pre"> </span><code>522</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23200948</code><span style="white-space:pre"> </span><code>167</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201068</code><span style="white-space:pre"> </span><code>8</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201188</code><span style="white-space:pre"> </span><code>133</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201308</code><span style="white-space:pre"> </span><code>476</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201428</code><span style="white-space:pre"> </span><code>833</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201548</code><span style="white-space:pre"> </span><code>1011</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201668</code><span style="white-space:pre"> </span><code>900</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201788</code><span style="white-space:pre"> </span><code>545</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23201916</code><span style="white-space:pre"> </span><code>185</code><span style="white-space:pre"> </span><code>128</code></div><div style="text-align:left"><code>23202036</code><span style="white-space:pre"> </span><code>9</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23202156</code><span style="white-space:pre"> </span><code>117</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23202276</code><span style="white-space:pre"> </span><code>452</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23202396</code><span style="white-space:pre"> </span><code>814</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"><code>23202516</code><span style="white-space:pre"> </span><code>1008</code><span style="white-space:pre"> </span><code>120</code></div><div style="text-align:left"></div></div><br><div style="text-align:left">There doesn't appear to be a problem with ADC responsiveness at 8.33K samples per second. &nbsp;Also, note that the use of the FOR loop did not cause any slowdown in collection EXCEPT for the initial sample. &nbsp;So now, it's just a matter of figuring out the right tricks to use to make the Arduino an easily programmed inexpensive DAQ. &nbsp;<b>So, we know that when using the Arduino IDE (not Wiring), with a 16 MHz chip,we are limited to just over 8000 samples per second, and while we have a 10 bit resolution, that resolution can be adjusted to match the input voltage - a real plus over fixed reference voltages.</b></div><div style="text-align:left"><b><br></b></div><h3><a name="TOC-Digging-Deeper---Speeding-It-Up"></a>Digging Deeper - Speeding It Up</h3><div style="text-align:left"><b><br></b></div><div style="text-align:left">This section kicks off with this very interesting thread:</div><div style="text-align:left"><b><br></b></div><div style="text-align:left"><b><a href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1208715493/11" rel="nofollow">www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1208715493/11</a></b></div><div style="text-align:left"><br></div><div style="text-align:left"><div style="text-align:left"></div></div><div class="sites-codeblock sites-codesnippet-block"><div style="text-align:left"><div style="text-align:left"><code>By default, the successive approximation circuitry requires an input clock frequency [ADC clock] between 50 kHz and 200 kHz</code></div><div style="text-align:left"><code>to get maximum resolution. If a lower resolution than 10 bits is needed, the input clock frequency to the ADC can be higher</code></div><div style="text-align:left"><code>than 200 kHz to get a higher sample rate.</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>The ADC clock is 16 MHz divided by a prescale factor. The prescale is set to 128 (16MHz/128 = 125 KHz) in wiring.c. Since a</code></div><div style="text-align:left"><code>conversion takes 13 ADC clocks, the sample rate is about 125KHz/13 or 9600 Hz.</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>So anyway, setting the prescale to, say, 16, would give a sample rate of 77 KHz. Not sure what kind of resolution you would</code></div><div style="text-align:left"><code>get though!</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>EDIT:</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>Found this reference:</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>http://www.atmel.com/dyn/resources/prod_documents/DOC2559.PDF</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>The ADC accuracy also depends on the ADC clock. The recommended maximum ADC clock frequency is limited by the internal DAC</code></div><div style="text-align:left"><code>in the conversion circuitry. For optimum performance, the ADC clock should not exceed 200 kHz. However, frequencies up to</code></div><div style="text-align:left"><code>1 MHz do not reduce the ADC resolution significantly. Operating the ADC with frequencies greater than 1 MHz is not</code></div><div style="text-align:left"><code>characterized.</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>So looks like using a prescale of 16 as above would give an ADC clock of 1 MHz and a sample rate of ~77KHz without much loss</code></div><div style="text-align:left"><code>in resolution.&nbsp;</code></div></div><div style="text-align:left"></div></div><br><div style="text-align:left">Hmmm, 77 kHz you say? &nbsp;Definitely going to look into this! &nbsp;</div><div style="text-align:left"><br></div><div style="text-align:left">Well here are the results (only the first column is from the Arduino - the rest was calculated using gnumeric) of the samples collected from the analog port of a 1000 Hz signal. &nbsp;Not 77K, because that's theoretical, and the actual program has to collect and store samples in memory, but how's 56K? <i style="font-weight:bold">&nbsp;There is no such thing as a 56K sample per second commercial DAQ for under $100, but we now have one for less than $30! &nbsp;</i>Well, for burst samples at least.</div><div style="text-align:left"><br></div><div style="text-align:left"><div style="display:block;text-align:left"><a href="https://sites.google.com/site/measuringstuff/the-arduino/prescale16w1K.svg?attredirects=0" imageanchor="1"><img border="0" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/prescale16w1K.svg"></a></div><br></div><div style="text-align:left">
+<table cellpadding="3" cellspacing="0">
+<tbody><tr>
+<td align="right" valign="bottom"></td></tr></tbody></table></div><div class="sites-codeblock sites-codesnippet-block"><div style="text-align:left"><table cellpadding="3" cellspacing="0"><tbody><tr><td align="right" valign="bottom"><span style="font-size:x-small"><code>726</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.61</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>679</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.38</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>630</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.13</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>576</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.87</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>523</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>5</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.60</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>470</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>6</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.34</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>415</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>7</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.06</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>364</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>8</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.81</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>312</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>9</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.55</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>263</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>10</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.31</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>218</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>11</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.08</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>176</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>12</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.88</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>137</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>13</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.68</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>103</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>14</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.51</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>73</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>15</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.36</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>50</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>16</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.25</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>35</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>17</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.17</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>25</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>18</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.12</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>23</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>19</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.11</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>24</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>20</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.12</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>28</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>21</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.14</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>39</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>22</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.19</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>57</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>23</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.28</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>83</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>24</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.41</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>115</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>25</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.57</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>152</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>26</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.76</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>192</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>27</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.96</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>236</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>28</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.17</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>283</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>29</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.41</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>332</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>30</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.65</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>384</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>31</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.91</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>436</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>32</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.17</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>491</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>33</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.44</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>543</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>34</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.70</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>598</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>35</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.98</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>649</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>36</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.23</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>700</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>37</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.48</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>753</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>38</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.75</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>798</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>39</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.97</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>839</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>40</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.17</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>876</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>41</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.36</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>908</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>42</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.52</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>936</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>43</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.66</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>958</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>44</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.77</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>974</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>45</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.85</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>984</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>46</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.90</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>987</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>47</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.91</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>984</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>48</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.90</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>975</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>49</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.85</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>960</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>50</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.78</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>939</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>51</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.67</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>911</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>52</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.53</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>879</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>53</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.37</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>842</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>54</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.19</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>801</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>55</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.99</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>758</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>56</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.77</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>711</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>57</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.54</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>660</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>58</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.28</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>608</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>59</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.03</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>555</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>60</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.76</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>502</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>61</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.50</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>448</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>62</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.23</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>395</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>63</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.97</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>343</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>64</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.71</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>292</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>65</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.45</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>246</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>66</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.22</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>200</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>67</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.00</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>159</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>68</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.79</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>123</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>69</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.61</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>90</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>70</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.45</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>63</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>71</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.31</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>43</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>72</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.21</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>30</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>73</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.15</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>24</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>74</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.12</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>23</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>75</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.11</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>24</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>76</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.12</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>31</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>77</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.15</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>46</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>78</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.23</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>67</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>79</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.33</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>95</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>80</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.47</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>129</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>81</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.64</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>167</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>82</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>0.83</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>208</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>83</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.03</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>254</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>84</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.26</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>302</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>85</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.50</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>352</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>86</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>1.75</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>405</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>87</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.02</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>458</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>88</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.28</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>512</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>89</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.55</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>566</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>90</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>2.82</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>620</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>91</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.08</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>670</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>92</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.33</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>719</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>93</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.58</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>768</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>94</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>3.82</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>811</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>95</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.04</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>849</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>96</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.22</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>886</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>97</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.41</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>918</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>98</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.57</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>944</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>99</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.70</code></span></td>
+</tr>
+<tr>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>963</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>100</code></span></td>
+<td align="right" valign="bottom"><span style="font-size:x-small"><code>4.79</code></span></td>
+</tr>
+</tbody></table></div><div style="text-align:left"></div></div><br><div style="text-align:left"><div style="text-align:left"><code>/*</code></div><div style="text-align:left"><code>&nbsp;&nbsp;Analog Input with prescale change (thanks to jmknapp)</code></div><div style="text-align:left"><code>&nbsp;&nbsp;http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1208715493/11</code></div><div style="text-align:left"><code>&nbsp;&nbsp;Reading a 1 kHz sine wave, 0 to 5 volts</code></div><div style="text-align:left"><code>&nbsp;&nbsp;Using analog 0</code></div><div style="text-align:left"><code>&nbsp;&nbsp;Results stored in memory for highest speed</code></div><div style="text-align:left"><code>&nbsp;*/</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>#define FASTADC 1</code></div><div style="text-align:left"><code>// defines for setting and clearing register bits</code></div><div style="text-align:left"><code>#ifndef cbi</code></div><div style="text-align:left"><code>#define cbi(sfr, bit) (_SFR_BYTE(sfr) &amp;= ~_BV(bit))</code></div><div style="text-align:left"><code>#endif</code></div><div style="text-align:left"><code>#ifndef sbi</code></div><div style="text-align:left"><code>#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))</code></div><div style="text-align:left"><code>#endif</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>int value[100]; &nbsp; // variable to store the value coming from the sensor</code></div><div style="text-align:left"><code>int i=0;</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>void setup()&nbsp;</code></div><div style="text-align:left"><code>{</code></div><div style="text-align:left"><code>&nbsp;Serial.begin(9600) ;</code></div><div style="text-align:left"><code>&nbsp;int i ;</code></div><div style="text-align:left"><code>&nbsp;&nbsp;</code></div><div style="text-align:left"><code>#if FASTADC</code></div><div style="text-align:left"><code>&nbsp;&nbsp;// set prescale to 16</code></div><div style="text-align:left"><code>&nbsp;&nbsp;sbi(ADCSRA,ADPS2) ;</code></div><div style="text-align:left"><code>&nbsp;&nbsp;cbi(ADCSRA,ADPS1) ;</code></div><div style="text-align:left"><code>&nbsp;&nbsp;cbi(ADCSRA,ADPS0) ;</code></div><div style="text-align:left"><code>#endif</code></div><div style="text-align:left"><code>}</code></div><div style="text-align:left"><br></div><div style="text-align:left"><code>void loop()&nbsp;</code></div><div style="text-align:left"><code>{&nbsp;</code></div><div style="text-align:left"><code>&nbsp;for (i=0;i&lt;100;i++)</code></div><div style="text-align:left"><code>{</code></div><div style="text-align:left"><code>&nbsp;&nbsp;value[i]=analogRead(0);</code></div><div style="text-align:left"><code>}&nbsp;</code></div><div style="text-align:left"><code>for (i=0;i&lt;100;i++)</code></div><div style="text-align:left"><code>{</code></div><div style="text-align:left"><code>&nbsp;&nbsp;Serial.println(value[i]);</code></div><div style="text-align:left"><code>}&nbsp;</code></div><div style="text-align:left"><code>Serial.println();</code></div><div style="text-align:left"><code>Serial.println();</code></div><div style="text-align:left"><code>Serial.println();</code></div><div style="text-align:left"><code>delay(5000);</code></div><div style="text-align:left"><code>&nbsp;&nbsp;</code></div><div style="text-align:left"><code>}</code></div><div style="text-align:left"><code>&nbsp;</code></div><div style="text-align:left"><code>And from the Atmel data sheet:</code></div><div><img src="./The Arduino DAQ Chronicles - Measuring Stuff_files/adc_prescale.png"></div></div></div><div style="text-align:-webkit-right"><br></div><div style="text-align:-webkit-right"><br></div><h3><a name="TOC-Yeah-Well-One-Hundred-Samples-Seems-a-Bit-Limiting-and-That-Timing-Thing..."></a>Yeah, Well, One Hundred Samples Seems a Bit Limiting, and That Timing Thing...</h3><div><br></div><div>Yep, you're correct. &nbsp;There are still a couple of problems to iron out. &nbsp;First, we've got to be able to move data out at the same rate it's being collected or we're limited to just a few hundred samples. &nbsp;Serial, even at 115,200 baud, is not going to do it, but once again the Arduino forums bail us out:</div><div><br></div><div>&nbsp;<a href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1241668644/0" target="_blank" rel="nofollow">http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1241668644/0</a></div><div><br></div><div>i2c can run at 400kbits, providing a transfer rate of 50K bytes per second. &nbsp;So, we can reduce the resolution and go with a map to convert integers to bytes and get a 50K sample per second stream, or be reduced to a 25K sample rate for full resolution. &nbsp;This setup is relatively painless, and there are memory chips that "talk" i2c. &nbsp;But there is an even better, if more complicated solution, and that is using the SPI communications interface which runs at a whooping 4 Mbits. &nbsp;This is what most SD/MMC card interfaces use, and it looks like the route to take. &nbsp;Information can be found here,&nbsp;</div><div><br></div><div><a href="http://klk64.com/arduino-spi/" rel="nofollow">http://klk64.com/arduino-spi/</a></div><div><br></div><div>and here,</div><div><br></div><div><a href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1206874649/49" rel="nofollow">http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1206874649/49</a></div><div><br></div><div>and with many other postings.</div><div><br></div><div>According to the main Arduino site there are soon to be <a href="http://twitter.com/arduinoteam/statuses/17359150446" target="_blank" rel="nofollow">Megas with SD memory cards</a>. &nbsp;When these show up, we'll continue the chronicles. I'm betting we have an awesome, programmable DAQ with deep logging capabilities for about $60.</div><div><br></div><div>To be continued...</div><div><br></div><div>In the meantime, here is an&nbsp;<a href="http://gizmologi.st/2009/04/taking-pictures-with-arduino/" target="_blank" rel="nofollow">interesting&nbsp;project</a> that moves around a bunch of data, and of course, <a href="http://www.ladyada.net/make/waveshield/" target="_blank" rel="nofollow">LadyAda is always in the mix</a>...</div><h3><a name="TOC-1"></a><br></h3><div><br></div><div>&nbsp;</div><div><br></div><div>&nbsp; &nbsp;&nbsp;</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane" dir="ltr" style="text-align: left;"><div class="dcs-a dcs-a-dcs-cb-dcs-if dcs-a-dcs-nb" tabindex="0"><div class="dcs-a-dcs-cb-dcs-x"><div class="dcs-a-dcs-cb-dcs-eb dcs-ue-dcs-mb-dcs-nb"><img class="dcs-a-dcs-o g-hovercard" width="48" height="48" alt="" id="dcs-img-0" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/silhouette96.png" data-userid="ANONYMOUS_105250506097979753968"><div class="dcs-a-dcs-cb-dcs-eb-dcs-x"><div class="dcs-a-dcs-cb-dcs-fg dcs-r-dcs-ug-dcs-vg g-hovercard" data-userid="ANONYMOUS_105250506097979753968">Anonymous</div><div class="dcs-a-dcs-e dcs-a-dcs-cb-dcs-e-dcs-f"><textarea class="dcs-a-dcs-e-dcs-ee" x-webkit-speech="" speech="" aria-haspopup="true" aria-label="Comment draft"></textarea><div class="dcs-a-dcs-e-dcs-t-dcs-rb"></div><div class="dcs-a-dcs-e-dcs-t-dcs-u"></div><div class="dcs-a-dcs-e-dcs-vb-dcs-wb-dcs-kb" style="display: none">Your +mention will add people to this discussion and send an email.</div><div class="dcs-a-dcs-e-dcs-ib-dcs-jb-dcs-kb" style="display: none">Making sure people you mentioned have access…</div><div class="dcs-a-dcs-e-dcs-tc"><div role="button" class="dcs-r-dcs-ug-dcs-vg dcs-j-dcs-l dcs-j-dcs-l-dcs-bc dcs-a-dcs-e-dcs-wf" tabindex="0" title="Post comment" style="-webkit-user-select: none;"><span class="dcs-a-dcs-e-dcs-tc-dcs-wf">Comment</span></div><div role="button" class="dcs-r-dcs-ug-dcs-vg dcs-j-dcs-l dcs-j-dcs-l-dcs-me dcs-a-dcs-e-dcs-hb" tabindex="0" title="Discard comment" style="-webkit-user-select: none;">Cancel</div></div></div></div></div><div class="dcs-a-dcs-cb-dcs-sb dcs-lb-dcs-mb-dcs-nb dcs-r-dcs-ug-dcs-vg">You do not have permission to add comments.</div><div class="dcs-a-dcs-nb dcs-a dcs-a-dcs-rc-dcs-sc"></div></div><div></div></div><span tabindex="0" style="position: absolute;"></span></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</tbody></table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://www.google.com/a/UniversalLogin?service=jotspot&continue=https://sites.google.com/site/measuringstuff/the-arduino">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="https://sites.google.com/site/measuringstuff/system/app/pages/recentChanges">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="https://sites.google.com/site/measuringstuff/system/app/pages/reportAbuse" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-onebar-footer">
+</div>
+
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+    
+        sites.core.Analytics.createTracker();
+        sites.core.Analytics.trackPageview();
+      
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+                    sites.Searchbox.initialize(
+                        'sites-searchbox-search-button',
+                        {"object":[]}['object'],
+                        'search-site',
+                        {"label":"Configure search options...","url":"/site/measuringstuff/system/app/pages/admin/settings"});
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+            JOT_setupNav("24064195342361927", "Home", false);
+            JOT_addListener('titleChange', 'JOT_NAVIGATION_titleChange', 'COMP_24064195342361927');
+          </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXuj-DFPFSie3egVkMai3-ZOCxPupYV2AvM0JK68kjPURilwVv9Ro0J8kkBnh47xicGF9Sqq19ylLvLPXjOH5U4x_riSKUCXi6PhK7HrZSmMZIieFjkb69m43ZidS_hWLt-Dcp-2/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([]);
+    gsites.Xhr.send('https://sites.google.com/site/measuringstuff/_/tz', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, 'https://gg.google.com/csi');
+                    }
+                  </script>
+
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+ //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+
+
+<div style="display: none;"><iframe name="xpcpeerEpET" id="xpcpeerEpET" src="./The Arduino DAQ Chronicles - Measuring Stuff_files/xpc.html" style="height: 100%; width: 100%;"></iframe></div></body></html>
