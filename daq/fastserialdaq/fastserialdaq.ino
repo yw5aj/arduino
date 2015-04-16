@@ -9,7 +9,7 @@
 
 void setup() {
   // I tested it and it seems 200,000 is the highest w/o too many failures
-  Serial.begin(200000);
+  Serial.begin(1000000);
   #if FASTADC
     // set prescale to 16
     sbi(ADCSRA,ADPS2) ;
