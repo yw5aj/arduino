@@ -8,8 +8,7 @@
 #endif
 
 void setup() {
-  // I tested it and it seems 200,000 is the highest w/o too many failures
-  Serial.begin(200000);
+  Serial.begin(1000000);
   #if FASTADC
     // set prescale to 16
     sbi(ADCSRA,ADPS2) ;
@@ -20,6 +19,6 @@ void setup() {
 
 void loop() {
   int val;
-  val = analogRead(A0);
-  Serial.println(val);
+  val = analogRead(A0) / 4;  // Convert to 8-bit
+  Serial.write(val);
 }
