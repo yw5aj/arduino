@@ -8,7 +8,6 @@
 #endif
 
 void setup() {
-  // I tested it and it seems 200,000 is the highest w/o too many failures
   Serial.begin(1000000);
   #if FASTADC
     // set prescale to 16
@@ -21,5 +20,6 @@ void setup() {
 void loop() {
   int val;
   val = analogRead(A0);
+//  val += int(512 * (sin(float(millis()) * 0.01) + 1)) * 0.001;
   Serial.println(val);
 }

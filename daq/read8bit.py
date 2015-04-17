@@ -15,7 +15,7 @@ if __name__ == '__main__':
     time_ = []
     time0 = time.time()
     flag = 0
-    while (time.time() - time0 < 5):
+    while (time.time() - time0 < 10):
         try:
             data.append(int.from_bytes(ser.read(), 'big'))
             time_.append(time.time() - time0)
