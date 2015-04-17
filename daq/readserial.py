@@ -10,7 +10,7 @@ import time
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
-    ser = serial.Serial('COM3', baudrate=921600)
+    ser = serial.Serial('COM3', baudrate=115200)
     data = []
     rawdata = []
     flawdata = []
