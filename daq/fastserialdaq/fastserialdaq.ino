@@ -8,7 +8,7 @@
 #endif
 
 void setup() {
-  Serial.begin(1000000);
+  Serial.begin(115200);
   #if FASTADC
     // set prescale to 16
     sbi(ADCSRA,ADPS2) ;
