@@ -1,22 +1,30 @@
 import serial
 import time
-import numpy as np
-import matplotlib.pyplot as plt
 
 
 if __name__ == '__main__':
-    ser = serial.Serial('COM3', baudrate=115200)
+    ser = serial.Serial('COM3', baudrate=1000000)
+    time0 = time.time()
     f = open('data.csv', 'w')
     ser.readline()
-    time0 = time.time()
-    datalen = 1000
-    data = np.zeros(datalen, dtype=int)
-    for i in range(datalen):
+    while (time.time() - time0 < 10):
         try:
-            data[i] = int(ser.readline())
+            data = int(ser.readline())
+            current_time = time.time() - time0
+            f.write('%.8f, %d\n' % (current_time, data))
+            f.flush()
         except ValueError:
             pass
-    time1 = time.time()
     ser.close()
     f.close()
-    fs = datalen / (time1 - time0)
+    # %% Plot data
+    import matplotlib.pyplot as plt
+    import numpy as np
+    time_array, data_array = np.loadtxt('data.csv', delimiter=',').T
+    plt.plot(time_array, data_array)
+    plt.ylim(-100, 1500)
+    plt.xlabel('Time (s)')
+    plt.ylabel('Data (0-1023)')
+    plt.tight_layout()
+    plt.savefig('data_sensor_alone.png')
+#    plt.close()

@@ -8,7 +8,7 @@
 #endif
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(1000000);
   #if FASTADC
     // set prescale to 16
     sbi(ADCSRA,ADPS2) ;
@@ -20,6 +20,6 @@ void setup() {
 void loop() {
   int val;
   val = analogRead(A0);
-  val += int(512 * (sin(float(millis()) * 0.01) + 1)) * 0.001;
+//  val += int(512 * (sin(float(millis()) * 0.01) + 1)) * 0.001;
   Serial.println(val);
 }
