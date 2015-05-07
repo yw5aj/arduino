@@ -6,36 +6,20 @@ This is a temporary script file.
 """
 
 import serial
-import time
 
 
 if __name__ == '__main__':
-    ser = serial.Serial('COM3', baudrate=500000)
-    time0 = time.time()
-    flag = 0
-    f = open('data.csv', 'w')
-    single_byte = False
-    if single_byte:
-        ser.read()
-    else:
-        ser.readline()
-    while (time.time() - time0 < 10):
-        try:
-            if single_byte:
-                data = int.from_bytes(ser.read(), 'big')
-            else:
-                data = int(ser.readline())
-            current_time = time.time() - time0
-            f.write('%.8f, %d\n' % (current_time, data))
-            f.flush()
-        except ValueError:
-            flag += 1
-            pass
-    ser.close()
-    f.close()
+    with serial.Serial('COM4', baudrate=1000000) as ser:
+        with open('data.dat', 'wb') as f:
+            for i in range(1000):
+                data = ser.read(1000)
+                f.write(data)
+                f.flush()
     # %% Plot data
     import matplotlib.pyplot as plt
     import numpy as np
-    time_array, data_array = np.loadtxt('data.csv', delimiter=',').T
-    plt.plot(time_array, data_array)
-    print(data_array.shape[0] / (time_array[-1] - time_array[0]))
+    with open('data.dat', 'rb') as f:
+        rawbytedata = f.read()
+    bytedata = rawbytedata.split(b'\n')[10:-10]
+    data = np.array(bytedata, dtype='int')
+    plt.plot(data * 1e-6, np.r_[0, np.diff(data)])
